@@ -15,10 +15,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.billate.app.model.BillTransaction
 import com.billate.app.ui.screens.BillReviewScreen
 import com.billate.app.ui.screens.HomeScreen
@@ -77,6 +79,9 @@ fun BillateNavHost() {
                         billToReview = bill
                         navController.navigate("review")
                     },
+                    onNavigateToEdit = { billId ->
+                        navController.navigate("edit/$billId")
+                    },
                 )
             }
             composable("settings") {
@@ -87,6 +92,7 @@ fun BillateNavHost() {
                 if (bill != null) {
                     BillReviewScreen(
                         initialBill = bill,
+                        billId = null,
                         onSaved = {
                             navController.popBackStack()
                         },
@@ -95,6 +101,22 @@ fun BillateNavHost() {
                         },
                     )
                 }
+            }
+            composable(
+                route = "edit/{billId}",
+                arguments = listOf(navArgument("billId") { type = NavType.LongType }),
+            ) { backStackEntry ->
+                val billId = backStackEntry.arguments?.getLong("billId") ?: return@composable
+                BillReviewScreen(
+                    initialBill = null,
+                    billId = billId,
+                    onSaved = {
+                        navController.popBackStack()
+                    },
+                    onBack = {
+                        navController.popBackStack()
+                    },
+                )
             }
         }
     }

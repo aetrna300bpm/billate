@@ -2,6 +2,7 @@ package com.billate.app.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.billate.app.data.BillRepository
 import com.billate.app.domain.SaveBillUseCase
 import com.billate.app.model.BillTransaction
 import com.billate.app.model.Category
@@ -15,7 +16,7 @@ import javax.inject.Inject
 
 sealed class ReviewUiState {
     data object Initial : ReviewUiState()
-    data class Editing(val bill: BillTransaction) : ReviewUiState()
+    data class Editing(val bill: BillTransaction, val isExisting: Boolean = false) : ReviewUiState()
     data object Saving : ReviewUiState()
     data object Saved : ReviewUiState()
     data class Error(val message: String) : ReviewUiState()
@@ -24,13 +25,27 @@ sealed class ReviewUiState {
 @HiltViewModel
 class BillReviewViewModel @Inject constructor(
     private val saveBillUseCase: SaveBillUseCase,
+    private val repository: BillRepository,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<ReviewUiState>(ReviewUiState.Initial)
     val uiState: StateFlow<ReviewUiState> = _uiState.asStateFlow()
 
+    /** Load a new (unsaved) bill for review. */
     fun loadBill(bill: BillTransaction) {
-        _uiState.value = ReviewUiState.Editing(bill)
+        _uiState.value = ReviewUiState.Editing(bill, isExisting = false)
+    }
+
+    /** Load an existing bill from the database by ID. */
+    fun loadBillById(billId: Long) {
+        viewModelScope.launch {
+            val bill = repository.getBillById(billId)
+            if (bill != null) {
+                _uiState.value = ReviewUiState.Editing(bill, isExisting = true)
+            } else {
+                _uiState.value = ReviewUiState.Error("Bill not found")
+            }
+        }
     }
 
     fun updateMerchant(name: String) {
@@ -83,11 +98,16 @@ class BillReviewViewModel @Inject constructor(
     }
 
     fun saveBill() {
-        val current = (_uiState.value as? ReviewUiState.Editing)?.bill ?: return
+        val state = _uiState.value as? ReviewUiState.Editing ?: return
+        val current = state.bill
         _uiState.value = ReviewUiState.Saving
         viewModelScope.launch {
             try {
-                saveBillUseCase(current)
+                if (state.isExisting) {
+                    repository.updateBill(current)
+                } else {
+                    saveBillUseCase(current)
+                }
                 _uiState.value = ReviewUiState.Saved
             } catch (e: Exception) {
                 _uiState.value = ReviewUiState.Error(e.message ?: "Failed to save")

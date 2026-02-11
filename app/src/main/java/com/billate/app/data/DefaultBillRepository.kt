@@ -26,6 +26,9 @@ class DefaultBillRepository @Inject constructor(
     override fun getBills(): Flow<List<BillTransaction>> =
         localDataSource.getAllBills()
 
+    override suspend fun getBillById(billId: Long): BillTransaction? =
+        localDataSource.getBillById(billId)
+
     override suspend fun processBill(imageUri: Uri): BillProcessingOutcome {
         return try {
             val bitmap = imageDataSource.readBitmap(imageUri)
@@ -75,6 +78,9 @@ class DefaultBillRepository @Inject constructor(
 
     override suspend fun saveBill(bill: BillTransaction): Long =
         localDataSource.saveBill(bill)
+
+    override suspend fun updateBill(bill: BillTransaction) =
+        localDataSource.updateBill(bill)
 
     override suspend fun deleteBill(billId: Long) =
         localDataSource.deleteBill(billId)

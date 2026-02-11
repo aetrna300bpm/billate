@@ -57,7 +57,8 @@ import com.billate.app.viewmodel.ReviewUiState
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BillReviewScreen(
-    initialBill: BillTransaction,
+    initialBill: BillTransaction?,
+    billId: Long?,
     onSaved: () -> Unit,
     onBack: () -> Unit,
     viewModel: BillReviewViewModel = hiltViewModel(),
@@ -66,7 +67,11 @@ fun BillReviewScreen(
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
-        viewModel.loadBill(initialBill)
+        if (initialBill != null) {
+            viewModel.loadBill(initialBill)
+        } else if (billId != null) {
+            viewModel.loadBillById(billId)
+        }
     }
 
     LaunchedEffect(uiState) {
@@ -84,8 +89,9 @@ fun BillReviewScreen(
 
     Scaffold(
         topBar = {
+            val isEditing = (uiState as? ReviewUiState.Editing)?.isExisting == true
             TopAppBar(
-                title = { Text("Review Bill") },
+                title = { Text(if (isEditing) "Edit Bill" else "Review Bill") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")

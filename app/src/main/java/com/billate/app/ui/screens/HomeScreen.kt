@@ -1,5 +1,7 @@
 package com.billate.app.ui.screens
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -21,6 +23,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.Receipt
 import androidx.compose.material3.AlertDialog
@@ -48,18 +51,24 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.billate.app.model.BillTransaction
 import com.billate.app.viewmodel.HomeUiState
 import com.billate.app.viewmodel.HomeViewModel
+import java.io.File
 import java.text.NumberFormat
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onNavigateToReview: (BillTransaction) -> Unit,
+    onNavigateToEdit: (Long) -> Unit,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val bills by viewModel.bills.collectAsStateWithLifecycle()
@@ -67,11 +76,41 @@ fun HomeScreen(
     val context = LocalContext.current
     var showPickerDialog by remember { mutableStateOf(false) }
 
+    // Camera photo URI
+    var cameraImageUri by remember { mutableStateOf<Uri?>(null) }
+
     // Gallery picker
     val galleryLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.PickVisualMedia(),
     ) { uri: Uri? ->
         uri?.let { viewModel.onImageSelected(it) }
+    }
+
+    // Camera launcher
+    val cameraLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.TakePicture(),
+    ) { success: Boolean ->
+        if (success) {
+            cameraImageUri?.let { viewModel.onImageSelected(it) }
+        }
+    }
+
+    // Camera permission launcher
+    val cameraPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission(),
+    ) { granted ->
+        if (granted) {
+            val photoFile = createTempImageFile(context)
+            val uri = FileProvider.getUriForFile(
+                context,
+                "${context.packageName}.fileprovider",
+                photoFile,
+            )
+            cameraImageUri = uri
+            cameraLauncher.launch(uri)
+        } else {
+            Toast.makeText(context, "Camera permission is required to take photos", Toast.LENGTH_LONG).show()
+        }
     }
 
     // React to processing outcome
@@ -166,7 +205,10 @@ fun HomeScreen(
                     contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
                 ) {
                     items(bills, key = { it.id }) { bill ->
-                        BillCard(bill = bill)
+                        BillCard(
+                            bill = bill,
+                            onClick = { onNavigateToEdit(bill.id) },
+                        )
                     }
                 }
             }
@@ -180,6 +222,35 @@ fun HomeScreen(
             title = { Text("Add a Bill") },
             text = {
                 Column {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                showPickerDialog = false
+                                val hasPermission = ContextCompat.checkSelfPermission(
+                                    context,
+                                    Manifest.permission.CAMERA,
+                                ) == PackageManager.PERMISSION_GRANTED
+                                if (hasPermission) {
+                                    val photoFile = createTempImageFile(context)
+                                    val uri = FileProvider.getUriForFile(
+                                        context,
+                                        "${context.packageName}.fileprovider",
+                                        photoFile,
+                                    )
+                                    cameraImageUri = uri
+                                    cameraLauncher.launch(uri)
+                                } else {
+                                    cameraPermissionLauncher.launch(Manifest.permission.CAMERA)
+                                }
+                            }
+                            .padding(vertical = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Icon(Icons.Default.CameraAlt, contentDescription = null)
+                        Spacer(modifier = Modifier.width(16.dp))
+                        Text("Take a Photo", style = MaterialTheme.typography.bodyLarge)
+                    }
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -207,8 +278,19 @@ fun HomeScreen(
     }
 }
 
+private fun createTempImageFile(context: android.content.Context): File {
+    val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
+    val imageDir = File(context.cacheDir, "camera_images")
+    imageDir.mkdirs()
+    return File.createTempFile("RECEIPT_${timeStamp}_", ".jpg", imageDir)
+}
+
 @Composable
-private fun BillCard(bill: BillTransaction, modifier: Modifier = Modifier) {
+private fun BillCard(
+    bill: BillTransaction,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     val formatter = remember {
         NumberFormat.getNumberInstance(Locale("vi", "VN")).apply {
             maximumFractionDigits = 0
@@ -216,7 +298,9 @@ private fun BillCard(bill: BillTransaction, modifier: Modifier = Modifier) {
     }
 
     Card(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
     ) {
         Column(modifier = Modifier.padding(16.dp)) {

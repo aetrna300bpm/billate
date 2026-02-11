@@ -18,10 +18,20 @@ class BillLocalDataSource @Inject constructor(
         }
     }
 
+    suspend fun getBillById(billId: Long): BillTransaction? {
+        return billDao.getBillWithLineItems(billId)?.toDomain()
+    }
+
     suspend fun saveBill(bill: BillTransaction): Long {
         val entity = bill.toEntity()
         val lineItemEntities = bill.lineItems.map { it.toEntity(billId = 0) }
         return billDao.insertBillWithLineItems(entity, lineItemEntities)
+    }
+
+    suspend fun updateBill(bill: BillTransaction) {
+        val entity = bill.toEntity()
+        val lineItemEntities = bill.lineItems.map { it.toEntity(billId = bill.id) }
+        billDao.updateBillWithLineItems(entity, lineItemEntities)
     }
 
     suspend fun deleteBill(billId: Long) {
