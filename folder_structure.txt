@@ -1,0 +1,2621 @@
+Folder PATH listing for volume Free
+Volume serial number is B0C5-64F1
+F:.
+¦   build.gradle.kts
+¦   folder_structure.txt
+¦   gradle.properties
+¦   gradlew
+¦   gradlew.bat
+¦   local.properties
+¦   settings.gradle.kts
+¦   
++---.gradle
+¦   ¦   config.properties
+¦   ¦   file-system.probe
+¦   ¦   
+¦   +---8.7
+¦   ¦   ¦   gc.properties
+¦   ¦   ¦   
+¦   ¦   +---checksums
+¦   ¦   ¦       checksums.lock
+¦   ¦   ¦       md5-checksums.bin
+¦   ¦   ¦       sha1-checksums.bin
+¦   ¦   ¦       
+¦   ¦   +---dependencies-accessors
+¦   ¦   ¦       gc.properties
+¦   ¦   ¦       
+¦   ¦   +---executionHistory
+¦   ¦   ¦       executionHistory.bin
+¦   ¦   ¦       executionHistory.lock
+¦   ¦   ¦       
+¦   ¦   +---expanded
+¦   ¦   +---fileChanges
+¦   ¦   ¦       last-build.bin
+¦   ¦   ¦       
+¦   ¦   +---fileHashes
+¦   ¦   ¦       fileHashes.bin
+¦   ¦   ¦       fileHashes.lock
+¦   ¦   ¦       resourceHashesCache.bin
+¦   ¦   ¦       
+¦   ¦   +---vcsMetadata
+¦   +---buildOutputCleanup
+¦   ¦       buildOutputCleanup.lock
+¦   ¦       cache.properties
+¦   ¦       outputFiles.bin
+¦   ¦       
+¦   +---kotlin
+¦   ¦   +---errors
+¦   ¦   +---sessions
+¦   +---vcs-1
+¦           gc.properties
+¦           
++---.idea
+¦   ¦   .gitignore
+¦   ¦   .name
+¦   ¦   AndroidProjectSystem.xml
+¦   ¦   appInsightsSettings.xml
+¦   ¦   compiler.xml
+¦   ¦   deploymentTargetSelector.xml
+¦   ¦   gradle.xml
+¦   ¦   migrations.xml
+¦   ¦   misc.xml
+¦   ¦   runConfigurations.xml
+¦   ¦   workspace.xml
+¦   ¦   
+¦   +---caches
+¦           deviceStreaming.xml
+¦           
++---app
+¦   ¦   build.gradle.kts
+¦   ¦   proguard-rules.pro
+¦   ¦   
+¦   +---build
+¦   ¦   +---generated
+¦   ¦   ¦   +---ap_generated_sources
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---out
+¦   ¦   ¦   +---hilt
+¦   ¦   ¦   ¦   +---component_sources
+¦   ¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦   ¦       +---com
+¦   ¦   ¦   ¦   ¦           +---billate
+¦   ¦   ¦   ¦   ¦               +---app
+¦   ¦   ¦   ¦   ¦                       BillateApplication_HiltComponents.java
+¦   ¦   ¦   ¦   ¦                       DaggerBillateApplication_HiltComponents_SingletonC.java
+¦   ¦   ¦   ¦   ¦                       Hilt_BillateApplication.java
+¦   ¦   ¦   ¦   ¦                       
+¦   ¦   ¦   ¦   +---component_trees
+¦   ¦   ¦   ¦       +---debug
+¦   ¦   ¦   ¦           +---com
+¦   ¦   ¦   ¦           ¦   +---billate
+¦   ¦   ¦   ¦           ¦       +---app
+¦   ¦   ¦   ¦           ¦               BillateApplication_ComponentTreeDeps.java
+¦   ¦   ¦   ¦           ¦               
+¦   ¦   ¦   ¦           +---dagger
+¦   ¦   ¦   ¦               +---hilt
+¦   ¦   ¦   ¦                   +---internal
+¦   ¦   ¦   ¦                       +---processedrootsentinel
+¦   ¦   ¦   ¦                           +---codegen
+¦   ¦   ¦   ¦                                   _com_billate_app_BillateApplication.java
+¦   ¦   ¦   ¦                                   
+¦   ¦   ¦   +---ksp
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---java
+¦   ¦   ¦   ¦       ¦   +---com
+¦   ¦   ¦   ¦       ¦   ¦   +---billate
+¦   ¦   ¦   ¦       ¦   ¦       +---app
+¦   ¦   ¦   ¦       ¦   ¦           ¦   BillateApplication_GeneratedInjector.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦   Hilt_MainActivity.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦   MainActivity_GeneratedInjector.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦   
+¦   ¦   ¦   ¦       ¦   ¦           +---data
+¦   ¦   ¦   ¦       ¦   ¦           ¦   ¦   DefaultBillRepository_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦   ¦   
+¦   ¦   ¦   ¦       ¦   ¦           ¦   +---local
+¦   ¦   ¦   ¦       ¦   ¦           ¦   ¦       ApiKeyManager_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦   ¦       BillateDatabase_Impl.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦   ¦       BillDao_Impl.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦   ¦       BillLocalDataSource_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦   ¦       
+¦   ¦   ¦   ¦       ¦   ¦           ¦   +---remote
+¦   ¦   ¦   ¦       ¦   ¦           ¦           GeminiRemoteDataSource_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦           ImageDataSource_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦           
+¦   ¦   ¦   ¦       ¦   ¦           +---di
+¦   ¦   ¦   ¦       ¦   ¦           ¦       AppModule_ProvideBillDaoFactory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦       AppModule_ProvideBillRepositoryFactory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦       AppModule_ProvideContentResolverFactory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦       AppModule_ProvideDatabaseFactory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦       
+¦   ¦   ¦   ¦       ¦   ¦           +---domain
+¦   ¦   ¦   ¦       ¦   ¦           ¦       NormalizeCurrencyUseCase_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦       ProcessBillUseCase_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦       SaveBillUseCase_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦       ValidateBillUseCase_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦           ¦       
+¦   ¦   ¦   ¦       ¦   ¦           +---viewmodel
+¦   ¦   ¦   ¦       ¦   ¦                   BillReviewViewModel_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦                   BillReviewViewModel_HiltModules.java
+¦   ¦   ¦   ¦       ¦   ¦                   BillReviewViewModel_HiltModules_KeyModule_ProvideFactory.java
+¦   ¦   ¦   ¦       ¦   ¦                   HomeViewModel_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦                   HomeViewModel_HiltModules.java
+¦   ¦   ¦   ¦       ¦   ¦                   HomeViewModel_HiltModules_KeyModule_ProvideFactory.java
+¦   ¦   ¦   ¦       ¦   ¦                   SettingsViewModel_Factory.java
+¦   ¦   ¦   ¦       ¦   ¦                   SettingsViewModel_HiltModules.java
+¦   ¦   ¦   ¦       ¦   ¦                   SettingsViewModel_HiltModules_KeyModule_ProvideFactory.java
+¦   ¦   ¦   ¦       ¦   ¦                   
+¦   ¦   ¦   ¦       ¦   +---dagger
+¦   ¦   ¦   ¦       ¦   ¦   +---hilt
+¦   ¦   ¦   ¦       ¦   ¦       +---internal
+¦   ¦   ¦   ¦       ¦   ¦           +---aggregatedroot
+¦   ¦   ¦   ¦       ¦   ¦               +---codegen
+¦   ¦   ¦   ¦       ¦   ¦                       _com_billate_app_BillateApplication.java
+¦   ¦   ¦   ¦       ¦   ¦                       
+¦   ¦   ¦   ¦       ¦   +---hilt_aggregated_deps
+¦   ¦   ¦   ¦       ¦           _com_billate_app_BillateApplication_GeneratedInjector.java
+¦   ¦   ¦   ¦       ¦           _com_billate_app_di_AppModule.java
+¦   ¦   ¦   ¦       ¦           _com_billate_app_MainActivity_GeneratedInjector.java
+¦   ¦   ¦   ¦       ¦           _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_BindsModule.java
+¦   ¦   ¦   ¦       ¦           _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_KeyModule.java
+¦   ¦   ¦   ¦       ¦           _com_billate_app_viewmodel_HomeViewModel_HiltModules_BindsModule.java
+¦   ¦   ¦   ¦       ¦           _com_billate_app_viewmodel_HomeViewModel_HiltModules_KeyModule.java
+¦   ¦   ¦   ¦       ¦           _com_billate_app_viewmodel_SettingsViewModel_HiltModules_BindsModule.java
+¦   ¦   ¦   ¦       ¦           _com_billate_app_viewmodel_SettingsViewModel_HiltModules_KeyModule.java
+¦   ¦   ¦   ¦       ¦           
+¦   ¦   ¦   ¦       +---kotlin
+¦   ¦   ¦   +---res
+¦   ¦   ¦   ¦   +---pngs
+¦   ¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦   +---resValues
+¦   ¦   ¦   ¦       +---debug
+¦   ¦   ¦   +---source
+¦   ¦   ¦       +---buildConfig
+¦   ¦   ¦           +---debug
+¦   ¦   ¦               +---com
+¦   ¦   ¦                   +---billate
+¦   ¦   ¦                       +---app
+¦   ¦   ¦                               BuildConfig.java
+¦   ¦   ¦                               
+¦   ¦   +---intermediates
+¦   ¦   ¦   +---aar_metadata_check
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---checkDebugAarMetadata
+¦   ¦   ¦   +---annotation_processor_list
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---javaPreCompileDebug
+¦   ¦   ¦   ¦               annotationProcessors.json
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---apk_ide_redirect_file
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---createDebugApkListingFileRedirect
+¦   ¦   ¦   ¦               redirect.txt
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---app_metadata
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---writeDebugAppMetadata
+¦   ¦   ¦   ¦               app-metadata.properties
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---assets
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugAssets
+¦   ¦   ¦   +---classes
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---transformDebugClassesWithAsm
+¦   ¦   ¦   ¦           +---dirs
+¦   ¦   ¦   ¦           ¦   +---com
+¦   ¦   ¦   ¦           ¦   ¦   +---billate
+¦   ¦   ¦   ¦           ¦   ¦       +---app
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_ComponentTreeDeps.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_GeneratedInjector.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ActivityC$Builder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ActivityC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ActivityCBuilderModule.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ActivityRetainedC$Builder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ActivityRetainedC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ActivityRetainedCBuilderModule.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$FragmentC$Builder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$FragmentC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$FragmentCBuilderModule.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ServiceC$Builder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ServiceC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ServiceCBuilderModule.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$SingletonC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewC$Builder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewCBuilderModule.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewModelC$Builder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewModelC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewModelCBuilderModule.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewWithFragmentC$Builder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewWithFragmentC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents$ViewWithFragmentCBuilderModule.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BillateApplication_HiltComponents.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   BuildConfig.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ComposableSingletons$MainActivityKt$lambda-1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ComposableSingletons$MainActivityKt$lambda-2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ComposableSingletons$MainActivityKt$lambda-3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ComposableSingletons$MainActivityKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityCBuilder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityCImpl$LazyClassKeyProvider.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityCImpl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCBuilder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCImpl$SwitchingProvider.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCImpl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$Builder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$FragmentCBuilder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$FragmentCImpl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ServiceCBuilder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ServiceCImpl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$SingletonCImpl$SwitchingProvider.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$SingletonCImpl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewCBuilder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewCImpl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCBuilder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl$LazyClassKeyProvider.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl$SwitchingProvider.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewWithFragmentCBuilder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewWithFragmentCImpl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   Hilt_BillateApplication$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   Hilt_BillateApplication.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   Hilt_MainActivity$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   Hilt_MainActivity.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   MainActivity.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   MainActivity_GeneratedInjector.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   
+¦   ¦   ¦   ¦           ¦   ¦           +---data
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦   BillRepository.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦   DefaultBillRepository$processBill$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦   DefaultBillRepository.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦   DefaultBillRepository_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦   
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---local
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ApiKeyManager$Companion.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ApiKeyManager.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ApiKeyManager_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateDatabase.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateDatabase_Impl$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateDatabase_Impl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao$DefaultImpls.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao$insertBillWithLineItems$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao_Impl$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao_Impl$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao_Impl$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao_Impl$4.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao_Impl$5.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao_Impl$6.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao_Impl$7.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillDao_Impl.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillLocalDataSource.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillLocalDataSourceKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillLocalDataSource_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillTransactionEntity.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillWithLineItems.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       LineItemEntity.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---remote
+¦   ¦   ¦   ¦           ¦   ¦           ¦           GeminiRemoteDataSource$createModel$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           GeminiRemoteDataSource$createModel$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           GeminiRemoteDataSource$extractReceipt$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           GeminiRemoteDataSource$extractReceipt$inputContent$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           GeminiRemoteDataSource$json$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           GeminiRemoteDataSource.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           GeminiRemoteDataSource_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           ImageDataSource.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           ImageDataSource_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           
+¦   ¦   ¦   ¦           ¦   ¦           +---di
+¦   ¦   ¦   ¦           ¦   ¦           ¦       AppModule.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       AppModule_ProvideBillDaoFactory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       AppModule_ProvideBillRepositoryFactory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       AppModule_ProvideContentResolverFactory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       AppModule_ProvideDatabaseFactory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       
+¦   ¦   ¦   ¦           ¦   ¦           +---domain
+¦   ¦   ¦   ¦           ¦   ¦           ¦       NormalizeCurrencyUseCase.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       NormalizeCurrencyUseCase_Factory$InstanceHolder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       NormalizeCurrencyUseCase_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       ProcessBillUseCase.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       ProcessBillUseCase_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       SaveBillUseCase.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       SaveBillUseCase_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       ValidateBillUseCase.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       ValidateBillUseCase_Factory$InstanceHolder.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       ValidateBillUseCase_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       
+¦   ¦   ¦   ¦           ¦   ¦           +---model
+¦   ¦   ¦   ¦           ¦   ¦           ¦       BillProcessingOutcome$AutoSaved.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       BillProcessingOutcome$Failed.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       BillProcessingOutcome$RequiresReview.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       BillProcessingOutcome.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       BillTransaction.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       Category$Companion.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       Category.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       GeminiLineItem$$serializer.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       GeminiLineItem$Companion.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       GeminiLineItem.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       GeminiReceiptResponse$$serializer.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       GeminiReceiptResponse$Companion.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       GeminiReceiptResponse.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       LineItem.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦       
+¦   ¦   ¦   ¦           ¦   ¦           +---ui
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---navigation
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillateNavHostKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-4$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-5$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeRoute$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeRoute.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ReviewRoute$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ReviewRoute.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---screens
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$4.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$5.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$6.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$7.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$8.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$5.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$3$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$3$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$3$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4$1$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$5.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$6$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$6$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$7$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$7.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$8.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       BillReviewScreenKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-10$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-11$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-12$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-4$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-5$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-6$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-7$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-8$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-9$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-4$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-5$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$HomeScreenKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-4$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$BillCard$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$BillCard$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$2$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$4.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$3.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$4$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$5$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$5.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$6$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$6.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$7.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt$HomeScreen$galleryLauncher$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       HomeScreenKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$3$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$2.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       SettingsScreenKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦   ¦       
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---theme
+¦   ¦   ¦   ¦           ¦   ¦           ¦           ThemeKt$BillateTheme$1.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           ThemeKt.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           
+¦   ¦   ¦   ¦           ¦   ¦           +---viewmodel
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel$addLineItem$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel$removeLineItem$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel$saveBill$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel$updateCategory$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel$updateDate$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel$updateLineItem$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel$updateMerchant$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel$updateTotal$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel_HiltModules$BindsModule.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel_HiltModules$KeyModule.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel_HiltModules.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.class
+¦   ¦   ¦   ¦           ¦   ¦                   BillReviewViewModel_HiltModules_KeyModule_ProvideFactory.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeUiState$AutoSaved.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeUiState$Error.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeUiState$Initial.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeUiState$Processing.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeUiState$ReviewNeeded.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeUiState.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeViewModel$onImageSelected$1.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeViewModel.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeViewModel_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeViewModel_HiltModules$BindsModule.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeViewModel_HiltModules$KeyModule.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeViewModel_HiltModules.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.class
+¦   ¦   ¦   ¦           ¦   ¦                   HomeViewModel_HiltModules_KeyModule_ProvideFactory.class
+¦   ¦   ¦   ¦           ¦   ¦                   ReviewUiState$Editing.class
+¦   ¦   ¦   ¦           ¦   ¦                   ReviewUiState$Error.class
+¦   ¦   ¦   ¦           ¦   ¦                   ReviewUiState$Initial.class
+¦   ¦   ¦   ¦           ¦   ¦                   ReviewUiState$Saved.class
+¦   ¦   ¦   ¦           ¦   ¦                   ReviewUiState$Saving.class
+¦   ¦   ¦   ¦           ¦   ¦                   ReviewUiState.class
+¦   ¦   ¦   ¦           ¦   ¦                   SettingsUiState.class
+¦   ¦   ¦   ¦           ¦   ¦                   SettingsViewModel.class
+¦   ¦   ¦   ¦           ¦   ¦                   SettingsViewModel_Factory.class
+¦   ¦   ¦   ¦           ¦   ¦                   SettingsViewModel_HiltModules$BindsModule.class
+¦   ¦   ¦   ¦           ¦   ¦                   SettingsViewModel_HiltModules$KeyModule.class
+¦   ¦   ¦   ¦           ¦   ¦                   SettingsViewModel_HiltModules.class
+¦   ¦   ¦   ¦           ¦   ¦                   SettingsViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.class
+¦   ¦   ¦   ¦           ¦   ¦                   SettingsViewModel_HiltModules_KeyModule_ProvideFactory.class
+¦   ¦   ¦   ¦           ¦   ¦                   
+¦   ¦   ¦   ¦           ¦   +---dagger
+¦   ¦   ¦   ¦           ¦   ¦   +---hilt
+¦   ¦   ¦   ¦           ¦   ¦       +---internal
+¦   ¦   ¦   ¦           ¦   ¦           +---aggregatedroot
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---codegen
+¦   ¦   ¦   ¦           ¦   ¦           ¦           _com_billate_app_BillateApplication.class
+¦   ¦   ¦   ¦           ¦   ¦           ¦           
+¦   ¦   ¦   ¦           ¦   ¦           +---processedrootsentinel
+¦   ¦   ¦   ¦           ¦   ¦               +---codegen
+¦   ¦   ¦   ¦           ¦   ¦                       _com_billate_app_BillateApplication.class
+¦   ¦   ¦   ¦           ¦   ¦                       
+¦   ¦   ¦   ¦           ¦   +---hilt_aggregated_deps
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_BillateApplication_GeneratedInjector.class
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_di_AppModule.class
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_MainActivity_GeneratedInjector.class
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_BindsModule.class
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_KeyModule.class
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_viewmodel_HomeViewModel_HiltModules_BindsModule.class
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_viewmodel_HomeViewModel_HiltModules_KeyModule.class
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_viewmodel_SettingsViewModel_HiltModules_BindsModule.class
+¦   ¦   ¦   ¦           ¦   ¦       _com_billate_app_viewmodel_SettingsViewModel_HiltModules_KeyModule.class
+¦   ¦   ¦   ¦           ¦   ¦       
+¦   ¦   ¦   ¦           ¦   +---META-INF
+¦   ¦   ¦   ¦           ¦           app_debug.kotlin_module
+¦   ¦   ¦   ¦           ¦           
+¦   ¦   ¦   ¦           +---jars
+¦   ¦   ¦   ¦                   0.jar
+¦   ¦   ¦   ¦                   
+¦   ¦   ¦   +---compatible_screen_manifest
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---createDebugCompatibleScreenManifests
+¦   ¦   ¦   ¦               output-metadata.json
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---compile_and_runtime_not_namespaced_r_class_jar
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugResources
+¦   ¦   ¦   ¦               R.jar
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---compressed_assets
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---compressDebugAssets
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---data_binding_layout_info_type_merge
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugResources
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---data_binding_layout_info_type_package
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---packageDebugResources
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---desugar_graph
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   ¦               +---currentProject
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_0
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_1
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_2
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_3
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_4
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_5
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---jar_6cbfa3585e809a6f2c75eedfb5eec424a6f08deefd2c206abb5c20214a73d330_bucket_0
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---jar_6cbfa3585e809a6f2c75eedfb5eec424a6f08deefd2c206abb5c20214a73d330_bucket_1
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---jar_6cbfa3585e809a6f2c75eedfb5eec424a6f08deefd2c206abb5c20214a73d330_bucket_2
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---jar_6cbfa3585e809a6f2c75eedfb5eec424a6f08deefd2c206abb5c20214a73d330_bucket_3
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---jar_6cbfa3585e809a6f2c75eedfb5eec424a6f08deefd2c206abb5c20214a73d330_bucket_4
+¦   ¦   ¦   ¦               ¦   ¦       graph.bin
+¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦               ¦   +---jar_6cbfa3585e809a6f2c75eedfb5eec424a6f08deefd2c206abb5c20214a73d330_bucket_5
+¦   ¦   ¦   ¦               ¦           graph.bin
+¦   ¦   ¦   ¦               ¦           
+¦   ¦   ¦   ¦               +---externalLibs
+¦   ¦   ¦   ¦               +---mixedScopes
+¦   ¦   ¦   ¦               +---otherProjects
+¦   ¦   ¦   +---dex
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeExtDexDebug
+¦   ¦   ¦   ¦       ¦       classes.dex
+¦   ¦   ¦   ¦       ¦       classes2.dex
+¦   ¦   ¦   ¦       ¦       classes3.dex
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---mergeLibDexDebug
+¦   ¦   ¦   ¦       ¦   +---0
+¦   ¦   ¦   ¦       ¦   +---1
+¦   ¦   ¦   ¦       ¦   +---10
+¦   ¦   ¦   ¦       ¦   +---11
+¦   ¦   ¦   ¦       ¦   +---12
+¦   ¦   ¦   ¦       ¦   +---13
+¦   ¦   ¦   ¦       ¦   +---14
+¦   ¦   ¦   ¦       ¦   +---15
+¦   ¦   ¦   ¦       ¦   +---2
+¦   ¦   ¦   ¦       ¦   +---3
+¦   ¦   ¦   ¦       ¦   +---4
+¦   ¦   ¦   ¦       ¦   +---5
+¦   ¦   ¦   ¦       ¦   +---6
+¦   ¦   ¦   ¦       ¦   +---7
+¦   ¦   ¦   ¦       ¦   +---8
+¦   ¦   ¦   ¦       ¦   +---9
+¦   ¦   ¦   ¦       +---mergeProjectDexDebug
+¦   ¦   ¦   ¦           +---0
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---1
+¦   ¦   ¦   ¦           +---10
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---11
+¦   ¦   ¦   ¦           +---12
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---13
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---14
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---15
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---2
+¦   ¦   ¦   ¦           +---3
+¦   ¦   ¦   ¦           +---4
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---5
+¦   ¦   ¦   ¦           +---6
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---7
+¦   ¦   ¦   ¦           ¦       classes.dex
+¦   ¦   ¦   ¦           ¦       
+¦   ¦   ¦   ¦           +---8
+¦   ¦   ¦   ¦           +---9
+¦   ¦   ¦   +---dex_archive_input_jar_hashes
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦               out
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---dex_number_of_buckets_file
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦               out
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---duplicate_classes_check
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---checkDebugDuplicateClasses
+¦   ¦   ¦   +---external_file_lib_dex_archives
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---desugarDebugFileDependencies
+¦   ¦   ¦   +---external_libs_dex_archive
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---external_libs_dex_archive_with_artifact_transforms
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_dex
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugGlobalSynthetics
+¦   ¦   ¦   +---global_synthetics_external_lib
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_external_libs_artifact_transform
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_file_lib
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---desugarDebugFileDependencies
+¦   ¦   ¦   +---global_synthetics_mixed_scope
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_project
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_subproject
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---hilt
+¦   ¦   ¦   ¦   +---component_classes
+¦   ¦   ¦   ¦       +---debug
+¦   ¦   ¦   ¦           +---com
+¦   ¦   ¦   ¦           ¦   +---billate
+¦   ¦   ¦   ¦           ¦       +---app
+¦   ¦   ¦   ¦           ¦               BillateApplication_ComponentTreeDeps.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ActivityC$Builder.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ActivityC.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ActivityCBuilderModule.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ActivityRetainedC$Builder.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ActivityRetainedC.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ActivityRetainedCBuilderModule.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$FragmentC$Builder.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$FragmentC.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$FragmentCBuilderModule.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ServiceC$Builder.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ServiceC.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ServiceCBuilderModule.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$SingletonC.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewC$Builder.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewC.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewCBuilderModule.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewModelC$Builder.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewModelC.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewModelCBuilderModule.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewWithFragmentC$Builder.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewWithFragmentC.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents$ViewWithFragmentCBuilderModule.class
+¦   ¦   ¦   ¦           ¦               BillateApplication_HiltComponents.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityCBuilder.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityCImpl$LazyClassKeyProvider.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityCImpl.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCBuilder.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCImpl$SwitchingProvider.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCImpl.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$Builder.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$FragmentCBuilder.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$FragmentCImpl.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ServiceCBuilder.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ServiceCImpl.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$SingletonCImpl$SwitchingProvider.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$SingletonCImpl.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewCBuilder.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewCImpl.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCBuilder.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl$LazyClassKeyProvider.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl$SwitchingProvider.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewWithFragmentCBuilder.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewWithFragmentCImpl.class
+¦   ¦   ¦   ¦           ¦               DaggerBillateApplication_HiltComponents_SingletonC.class
+¦   ¦   ¦   ¦           ¦               Hilt_BillateApplication$1.class
+¦   ¦   ¦   ¦           ¦               Hilt_BillateApplication.class
+¦   ¦   ¦   ¦           ¦               
+¦   ¦   ¦   ¦           +---dagger
+¦   ¦   ¦   ¦               +---hilt
+¦   ¦   ¦   ¦                   +---internal
+¦   ¦   ¦   ¦                       +---processedrootsentinel
+¦   ¦   ¦   ¦                           +---codegen
+¦   ¦   ¦   ¦                                   _com_billate_app_BillateApplication.class
+¦   ¦   ¦   ¦                                   
+¦   ¦   ¦   +---incremental
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦   ¦   +---mergeDebugResources
+¦   ¦   ¦   ¦   ¦   ¦   ¦   compile-file-map.properties
+¦   ¦   ¦   ¦   ¦   ¦   ¦   merger.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   ¦   ¦   +---merged.dir
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-af
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-af.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-am
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-am.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ar
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ar.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-as
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-as.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-az
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-az.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-b+sr+Latn
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-b+sr+Latn.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-be
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-be.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-bg
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-bg.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-bn
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-bn.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-bs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-bs.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ca
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ca.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-cs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-cs.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-da
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-da.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-de
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-de.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-el
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-el.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-en-rAU
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-en-rAU.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-en-rCA
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-en-rCA.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-en-rGB
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-en-rGB.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-en-rIN
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-en-rIN.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-en-rXC
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-en-rXC.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-es
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-es.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-es-rUS
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-es-rUS.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-et
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-et.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-eu
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-eu.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-fa
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-fa.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-fi
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-fi.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-fr
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-fr.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-fr-rCA
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-fr-rCA.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-gl
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-gl.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-gu
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-gu.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-hi
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-hi.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-hr
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-hr.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-hu
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-hu.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-hy
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-hy.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-in
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-in.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-is
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-is.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-it
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-it.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-iw
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-iw.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ja
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ja.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ka
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ka.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-kk
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-kk.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-km
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-km.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-kn
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-kn.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ko
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ko.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ky
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ky.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-lo
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-lo.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-lt
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-lt.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-lv
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-lv.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-mk
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-mk.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ml.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-mn
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-mn.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-mr
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-mr.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ms
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ms.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-my
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-my.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-nb
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-nb.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ne
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ne.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-nl
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-nl.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-or
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-or.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-pa
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-pa.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-pl
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-pl.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-pt
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-pt.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-pt-rBR
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-pt-rBR.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-pt-rPT
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-pt-rPT.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ro
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ro.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ru
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ru.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-si
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-si.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-sk
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-sk.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-sl
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-sl.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-sq
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-sq.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-sr
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-sr.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-sv
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-sv.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-sw
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-sw.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ta
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ta.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-te
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-te.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-th
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-th.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-tl
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-tl.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-tr
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-tr.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-uk
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-uk.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-ur
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-ur.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-uz
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-uz.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-v21
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-v21.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-vi
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-vi.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-zh-rCN
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-zh-rCN.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-zh-rHK
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-zh-rHK.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-zh-rTW
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       values-zh-rTW.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---values-zu
+¦   ¦   ¦   ¦   ¦   ¦   ¦           values-zu.xml
+¦   ¦   ¦   ¦   ¦   ¦   ¦           
+¦   ¦   ¦   ¦   ¦   ¦   +---stripped.dir
+¦   ¦   ¦   ¦   ¦   +---packageDebugResources
+¦   ¦   ¦   ¦   ¦       ¦   compile-file-map.properties
+¦   ¦   ¦   ¦   ¦       ¦   merger.xml
+¦   ¦   ¦   ¦   ¦       ¦   
+¦   ¦   ¦   ¦   ¦       +---merged.dir
+¦   ¦   ¦   ¦   ¦       ¦   +---values
+¦   ¦   ¦   ¦   ¦       ¦           values.xml
+¦   ¦   ¦   ¦   ¦       ¦           
+¦   ¦   ¦   ¦   ¦       +---stripped.dir
+¦   ¦   ¦   ¦   +---debug-mergeJavaRes
+¦   ¦   ¦   ¦   ¦   ¦   merge-state
+¦   ¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   ¦   +---zip-cache
+¦   ¦   ¦   ¦   ¦           +cmm6H1PKQFID5JOeEQph_OK07Y=
+¦   ¦   ¦   ¦   ¦           +LfyHSJSbsevco55RjRI_E9pV3k=
+¦   ¦   ¦   ¦   ¦           01YvIeM5axquxBc+36wp4AmGGdo=
+¦   ¦   ¦   ¦   ¦           0h4nREbR1Al0UkP2uUXpAHhfmQI=
+¦   ¦   ¦   ¦   ¦           0Zm1aKvRc000yJ05MNezzr_czdU=
+¦   ¦   ¦   ¦   ¦           1Y+1TKti0wRcvt6AbqkyYIZ4kvk=
+¦   ¦   ¦   ¦   ¦           2I9cTiGvIXztXzoo1RnpAr2go0Y=
+¦   ¦   ¦   ¦   ¦           33PwmYsKx98Ss7IbirbrtochU+M=
+¦   ¦   ¦   ¦   ¦           3AGAwJUumbnw9t3HiWtklythe0I=
+¦   ¦   ¦   ¦   ¦           3qjyFWLBYEfa7N2kMMKFMBdhRv4=
+¦   ¦   ¦   ¦   ¦           3wsEBvdNCDAVTRw7_tM+Bne2EJA=
+¦   ¦   ¦   ¦   ¦           4h0ltEB31m_jUZGk7JJy+jlxxUI=
+¦   ¦   ¦   ¦   ¦           5jfvibXIYYmDgbAhDX3Fwjs4nwE=
+¦   ¦   ¦   ¦   ¦           5o8SZ8OcfhYjnl1jWw4P2niYsN8=
+¦   ¦   ¦   ¦   ¦           5pO0L70h4T2MVmxHC7ovERqqtqI=
+¦   ¦   ¦   ¦   ¦           6aNyMgJWelkQHFuR5vQ+uG5TPlA=
+¦   ¦   ¦   ¦   ¦           717xoZk5yUUDIo1gV2GLS9rSBEM=
+¦   ¦   ¦   ¦   ¦           7ExbaBUEo0gwV4WH_RwO0ImYRsk=
+¦   ¦   ¦   ¦   ¦           7zfZYfJEPtAGzaPwxwUXdppYebg=
+¦   ¦   ¦   ¦   ¦           8g9cnS5GE4SFkuQLYQ1ut4cIKjc=
+¦   ¦   ¦   ¦   ¦           8OPXKsa18kH4mEaq5vzNjftCt74=
+¦   ¦   ¦   ¦   ¦           8zgGxwQJu52Ea7JBkWxxajl+SMQ=
+¦   ¦   ¦   ¦   ¦           9agVxdgnrNM+lSWlrgcOyw+dKxM=
+¦   ¦   ¦   ¦   ¦           9K7AQGvWhbAA_+UhQ2JWeWfLqtg=
+¦   ¦   ¦   ¦   ¦           A2H0KdJlxpD4TdDiEfI04mUszSk=
+¦   ¦   ¦   ¦   ¦           aBpnlsN7BFm16XjjDhSjemJvjtA=
+¦   ¦   ¦   ¦   ¦           ADJCyO+m7ngHAjmd4iqNXu+8Jh0=
+¦   ¦   ¦   ¦   ¦           C+K1fffLRm+HhkVLaeyElk2Ucyk=
+¦   ¦   ¦   ¦   ¦           cdHdaMqnNR8q72C7NoKh5QMS508=
+¦   ¦   ¦   ¦   ¦           cmE1nbLJT8AIYr7WyZBAZU93WtM=
+¦   ¦   ¦   ¦   ¦           cnd98K9u6Hqlo7uHnjkFyn3Vi_4=
+¦   ¦   ¦   ¦   ¦           cSDxJDCytEGB6IHMSinna5n5WqY=
+¦   ¦   ¦   ¦   ¦           cW7BZFUP_Bv6TC1g_xF7PZPFKL0=
+¦   ¦   ¦   ¦   ¦           D+VQxD29FlIiuIWwq6TcS6Ol4CY=
+¦   ¦   ¦   ¦   ¦           dCFa6zYgzWojeZkAti5fDTQR1XM=
+¦   ¦   ¦   ¦   ¦           dS3sMJY1ETROO_t4__iCZ7qArYk=
+¦   ¦   ¦   ¦   ¦           Dvv8p_BM5LgBuqoYZRxkfJjziro=
+¦   ¦   ¦   ¦   ¦           DZqf_Gz3b_TDvng9Jm1tyKTI_Gw=
+¦   ¦   ¦   ¦   ¦           E4Ec3KsT_Fyaxx5bjSRLachDruE=
+¦   ¦   ¦   ¦   ¦           E9l0Bu1wHg5zOrSlKjDVjnajaRs=
+¦   ¦   ¦   ¦   ¦           eD5eMWlS2uRoPnWxRTa23STUVAs=
+¦   ¦   ¦   ¦   ¦           eSE8MSlnjQ1JkDL4uBZBNo4uNw4=
+¦   ¦   ¦   ¦   ¦           gfnrNdsF+TlFbAM8VzZGfykwT4c=
+¦   ¦   ¦   ¦   ¦           gk0_XGJxcljEKmJi72QIAkhA2tM=
+¦   ¦   ¦   ¦   ¦           H+fqk_U4E9bHAtTtl+L9f34T684=
+¦   ¦   ¦   ¦   ¦           H+tUrbHooS4rnKS6gDq7dIYMXvs=
+¦   ¦   ¦   ¦   ¦           H6uxc0FizOGX8Fd4P8I_IDVrMfw=
+¦   ¦   ¦   ¦   ¦           I+3hJ9aBGV1FneT1zKGybdYJc90=
+¦   ¦   ¦   ¦   ¦           idgQp17j3kslAoN_EAH98xuYrtI=
+¦   ¦   ¦   ¦   ¦           IzmKyKrkMJmKLBRlsG0dmK7iY5Y=
+¦   ¦   ¦   ¦   ¦           i_pcn9pBiTifC2ohLNkAgVtCk1E=
+¦   ¦   ¦   ¦   ¦           J8zyLlVjyaA+Z_MpGZ2QBmn+mYM=
+¦   ¦   ¦   ¦   ¦           JSkrgw4sRtYo7C8v_+XwRsZX2DQ=
+¦   ¦   ¦   ¦   ¦           jYwO6JtxRseUhqigkQVtytaoWl4=
+¦   ¦   ¦   ¦   ¦           K78LhmPM8Tax7MQowVEE2kgC9WI=
+¦   ¦   ¦   ¦   ¦           KpbBuNAve+NRKZ4ttIDdmN7mBiw=
+¦   ¦   ¦   ¦   ¦           l0qUBzGYfWjAfIDERn3FynatGfs=
+¦   ¦   ¦   ¦   ¦           L96KsMJNBY+KqAs_MuuMmMKmMEg=
+¦   ¦   ¦   ¦   ¦           LJH8Z84HnZncvKarn+xACAZF9Fk=
+¦   ¦   ¦   ¦   ¦           lKP2g02FsLdxvfDpW0dW_OOzKqw=
+¦   ¦   ¦   ¦   ¦           m+CFYqs0FaAznjK3WvRmMeSLHOU=
+¦   ¦   ¦   ¦   ¦           M4KWsrnz9uoUEHUu0UoK3ZOoRB4=
+¦   ¦   ¦   ¦   ¦           ma6qtgHYS+4Ia85v7yYTrnJDad0=
+¦   ¦   ¦   ¦   ¦           mJ0ndD1lIWGoqZmlNIkQL0SGbDU=
+¦   ¦   ¦   ¦   ¦           MKYTBVu+HE0mLJqB9pje3TjFM_o=
+¦   ¦   ¦   ¦   ¦           n1SNnAThJRHQdOpr4t8UcL+5cu8=
+¦   ¦   ¦   ¦   ¦           N6SzfViLwijqWJP6J8neBdBpSYw=
+¦   ¦   ¦   ¦   ¦           naUW3T4wezZgsdovlYonlXoW2qs=
+¦   ¦   ¦   ¦   ¦           nHdxoNKfSOmm5hIYVJEICJGhLKk=
+¦   ¦   ¦   ¦   ¦           njseZX_+WLN2LSYSlGbE3bkMLHs=
+¦   ¦   ¦   ¦   ¦           nnRiun4xKWfCuZxfxqQRxE6Luls=
+¦   ¦   ¦   ¦   ¦           nOdQ4hBxmuT5pkJvgrA8rJGnquM=
+¦   ¦   ¦   ¦   ¦           O3km_52OjHHkgt5eOmjGFV65ScA=
+¦   ¦   ¦   ¦   ¦           o8k6jMCkNExq_cxolbie6vUw1qE=
+¦   ¦   ¦   ¦   ¦           OB6Kn3+aypCl8LyV0R3gjvoFF0M=
+¦   ¦   ¦   ¦   ¦           Og1FPqYSG7fLQNV058frydDMNww=
+¦   ¦   ¦   ¦   ¦           OVeSp7xP+1bl1VgpgSMnk1EyRxo=
+¦   ¦   ¦   ¦   ¦           PscfXn477JXzmnZWNhnBvnnHhs4=
+¦   ¦   ¦   ¦   ¦           PT2PG2O8FbvCNss+U1gV8vyYv50=
+¦   ¦   ¦   ¦   ¦           PtVstxlmC0B8MvnyhrAoVnSuz6E=
+¦   ¦   ¦   ¦   ¦           PXHDsknTD5kBjdOIAwxlV0LlKdo=
+¦   ¦   ¦   ¦   ¦           QHOvV3YBhk1Tp5JbHsiPhon2pgo=
+¦   ¦   ¦   ¦   ¦           QTgMWXoRWb4gNtpeztLAEsu8DNc=
+¦   ¦   ¦   ¦   ¦           qV8GAaqa73Wd4YAs2nP8hZUF7sg=
+¦   ¦   ¦   ¦   ¦           qVLbz4yocLTBh7kN_bDCDx9_pq8=
+¦   ¦   ¦   ¦   ¦           qxxaZgiCTK8T5lkhoeqYGYvNEW0=
+¦   ¦   ¦   ¦   ¦           rg+rf_f_anLElO8Xki0iUCOeGhk=
+¦   ¦   ¦   ¦   ¦           RNSa+MfZz2FGaMo3h1L_wHbsZ9E=
+¦   ¦   ¦   ¦   ¦           s4Vne_wxHFWuZBT6JrIcweKsSVg=
+¦   ¦   ¦   ¦   ¦           sCcm4kSSJ5a1gnIGyVOsOFjFRzU=
+¦   ¦   ¦   ¦   ¦           sFUeaFoQM0LpR+nUiQEuz9jhU4c=
+¦   ¦   ¦   ¦   ¦           SmRcRrrMOMy89BnoGa2logfRHBk=
+¦   ¦   ¦   ¦   ¦           srCTFxEupMRTAEYm7IcuMJfg3VY=
+¦   ¦   ¦   ¦   ¦           ssy_HkXrkN0slrQJx70I5JZf7ik=
+¦   ¦   ¦   ¦   ¦           t8qqWdJisZkgTzet9k9CF2usA4Q=
+¦   ¦   ¦   ¦   ¦           tjKf2HffQTmWQ0cNVN4W+ISFSU4=
+¦   ¦   ¦   ¦   ¦           U7dnRIvn8j1OOZRxAqz0ZVgYHn0=
+¦   ¦   ¦   ¦   ¦           UKm7xC+PyLVSJsp_vpCbfPWYRP8=
+¦   ¦   ¦   ¦   ¦           U_JTGFQwjrlc16HRWO1gIKy0zW8=
+¦   ¦   ¦   ¦   ¦           Vb+NIVsq_lgdyFe4yLKa8UUTk4U=
+¦   ¦   ¦   ¦   ¦           W7UgK4bWZRhyCyVK5aI2tf0+d+E=
+¦   ¦   ¦   ¦   ¦           wksHnyy26Mz5fG7jwbLIz1iv2Xg=
+¦   ¦   ¦   ¦   ¦           Wmre2cFCB7h2eyRcLKl_FbxkDxc=
+¦   ¦   ¦   ¦   ¦           WqKpJSnON9y4xfJzkX05ZVvACbQ=
+¦   ¦   ¦   ¦   ¦           wRXP514dID4Mbi9uoeRuxuONtNw=
+¦   ¦   ¦   ¦   ¦           wSGj4Wor83GOF7N2Pe35KW6TfNU=
+¦   ¦   ¦   ¦   ¦           wWBJ5Lfi+JxfwG_BBzQSxLc0iTw=
+¦   ¦   ¦   ¦   ¦           Xa2eCltDV3g9KPpCRQuHtkmc3Vc=
+¦   ¦   ¦   ¦   ¦           xf1Qd3dIPXsA3DQ0q0heDUH_Gmk=
+¦   ¦   ¦   ¦   ¦           XVp9PCHBbaT6+wFkpscVeivShRI=
+¦   ¦   ¦   ¦   ¦           xW77r1ZgRe59pYJJXVf0APnshR0=
+¦   ¦   ¦   ¦   ¦           XxrdNiYPqKsSDtzaNVX_lJ684A4=
+¦   ¦   ¦   ¦   ¦           y9OmcaAKAj0+XJCA0YEsB8oXSVY=
+¦   ¦   ¦   ¦   ¦           YL4N4EJLR1Cx98eYfBwmDqk7CPU=
+¦   ¦   ¦   ¦   ¦           z6arBKVgiipzeEfelYOed1haE3g=
+¦   ¦   ¦   ¦   ¦           zchsgWuAhg4Aqd2R14q0BlZrZmM=
+¦   ¦   ¦   ¦   ¦           ZFZmMIQsTMlO+a1NoBYvZ_DZ2+g=
+¦   ¦   ¦   ¦   ¦           zl7yvhFq7ZJTwPOXskAdoj49H6I=
+¦   ¦   ¦   ¦   ¦           zxnMQz_TA2KYj7gIOTaXbHzulh4=
+¦   ¦   ¦   ¦   ¦           Z_xMPDcgnXnCWYPx5RZ4ruCBJu4=
+¦   ¦   ¦   ¦   ¦           _mOlkcp_YEHsb0QZ_zKkSqUm6Hc=
+¦   ¦   ¦   ¦   ¦           _TWYuBfVoMjpqe8KISPrPhR7Dp0=
+¦   ¦   ¦   ¦   ¦           
+¦   ¦   ¦   ¦   +---mergeDebugAssets
+¦   ¦   ¦   ¦   ¦       merger.xml
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---mergeDebugJniLibFolders
+¦   ¦   ¦   ¦   ¦       merger.xml
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---mergeDebugShaders
+¦   ¦   ¦   ¦   ¦       merger.xml
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---packageDebug
+¦   ¦   ¦   ¦   ¦   +---tmp
+¦   ¦   ¦   ¦   ¦       +---debug
+¦   ¦   ¦   ¦   ¦           ¦   dex-renamer-state.txt
+¦   ¦   ¦   ¦   ¦           ¦   
+¦   ¦   ¦   ¦   ¦           +---zip-cache
+¦   ¦   ¦   ¦   ¦                   androidResources
+¦   ¦   ¦   ¦   ¦                   javaResources0
+¦   ¦   ¦   ¦   ¦                   
+¦   ¦   ¦   ¦   +---processDebugResources
+¦   ¦   ¦   ¦   ¦       resources-list-for-resources-debug.ap_.txt
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---transformDebugClassesWithAsm
+¦   ¦   ¦   +---javac
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---compileDebugJavaWithJavac
+¦   ¦   ¦   ¦           +---classes
+¦   ¦   ¦   ¦               +---com
+¦   ¦   ¦   ¦               ¦   +---billate
+¦   ¦   ¦   ¦               ¦       +---app
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_GeneratedInjector.class
+¦   ¦   ¦   ¦               ¦           ¦   BuildConfig.class
+¦   ¦   ¦   ¦               ¦           ¦   Hilt_MainActivity$1.class
+¦   ¦   ¦   ¦               ¦           ¦   Hilt_MainActivity.class
+¦   ¦   ¦   ¦               ¦           ¦   MainActivity_GeneratedInjector.class
+¦   ¦   ¦   ¦               ¦           ¦   
+¦   ¦   ¦   ¦               ¦           +---data
+¦   ¦   ¦   ¦               ¦           ¦   ¦   DefaultBillRepository_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦   
+¦   ¦   ¦   ¦               ¦           ¦   +---local
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ApiKeyManager_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateDatabase_Impl$1.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateDatabase_Impl.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$1.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$2.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$3.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$4.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$5.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$6.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$7.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillLocalDataSource_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦   ¦       
+¦   ¦   ¦   ¦               ¦           ¦   +---remote
+¦   ¦   ¦   ¦               ¦           ¦           GeminiRemoteDataSource_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦           ImageDataSource_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦           
+¦   ¦   ¦   ¦               ¦           +---di
+¦   ¦   ¦   ¦               ¦           ¦       AppModule_ProvideBillDaoFactory.class
+¦   ¦   ¦   ¦               ¦           ¦       AppModule_ProvideBillRepositoryFactory.class
+¦   ¦   ¦   ¦               ¦           ¦       AppModule_ProvideContentResolverFactory.class
+¦   ¦   ¦   ¦               ¦           ¦       AppModule_ProvideDatabaseFactory.class
+¦   ¦   ¦   ¦               ¦           ¦       
+¦   ¦   ¦   ¦               ¦           +---domain
+¦   ¦   ¦   ¦               ¦           ¦       NormalizeCurrencyUseCase_Factory$InstanceHolder.class
+¦   ¦   ¦   ¦               ¦           ¦       NormalizeCurrencyUseCase_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦       ProcessBillUseCase_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦       SaveBillUseCase_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦       ValidateBillUseCase_Factory$InstanceHolder.class
+¦   ¦   ¦   ¦               ¦           ¦       ValidateBillUseCase_Factory.class
+¦   ¦   ¦   ¦               ¦           ¦       
+¦   ¦   ¦   ¦               ¦           +---viewmodel
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_Factory.class
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules$BindsModule.class
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules$KeyModule.class
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules.class
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.class
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules_KeyModule_ProvideFactory.class
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_Factory.class
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules$BindsModule.class
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules$KeyModule.class
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules.class
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.class
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules_KeyModule_ProvideFactory.class
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_Factory.class
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules$BindsModule.class
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules$KeyModule.class
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules.class
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.class
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules_KeyModule_ProvideFactory.class
+¦   ¦   ¦   ¦               ¦                   
+¦   ¦   ¦   ¦               +---dagger
+¦   ¦   ¦   ¦               ¦   +---hilt
+¦   ¦   ¦   ¦               ¦       +---internal
+¦   ¦   ¦   ¦               ¦           +---aggregatedroot
+¦   ¦   ¦   ¦               ¦               +---codegen
+¦   ¦   ¦   ¦               ¦                       _com_billate_app_BillateApplication.class
+¦   ¦   ¦   ¦               ¦                       
+¦   ¦   ¦   ¦               +---hilt_aggregated_deps
+¦   ¦   ¦   ¦                       _com_billate_app_BillateApplication_GeneratedInjector.class
+¦   ¦   ¦   ¦                       _com_billate_app_di_AppModule.class
+¦   ¦   ¦   ¦                       _com_billate_app_MainActivity_GeneratedInjector.class
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_BindsModule.class
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_KeyModule.class
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_HomeViewModel_HiltModules_BindsModule.class
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_HomeViewModel_HiltModules_KeyModule.class
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_SettingsViewModel_HiltModules_BindsModule.class
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_SettingsViewModel_HiltModules_KeyModule.class
+¦   ¦   ¦   ¦                       
+¦   ¦   ¦   +---java_res
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugJavaRes
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   ¦               +---com
+¦   ¦   ¦   ¦               ¦   +---billate
+¦   ¦   ¦   ¦               ¦       +---app
+¦   ¦   ¦   ¦               ¦           +---data
+¦   ¦   ¦   ¦               ¦           ¦   +---local
+¦   ¦   ¦   ¦               ¦           ¦   +---remote
+¦   ¦   ¦   ¦               ¦           +---di
+¦   ¦   ¦   ¦               ¦           +---domain
+¦   ¦   ¦   ¦               ¦           +---model
+¦   ¦   ¦   ¦               ¦           +---ui
+¦   ¦   ¦   ¦               ¦           ¦   +---navigation
+¦   ¦   ¦   ¦               ¦           ¦   +---screens
+¦   ¦   ¦   ¦               ¦           ¦   +---theme
+¦   ¦   ¦   ¦               ¦           +---viewmodel
+¦   ¦   ¦   ¦               +---dagger
+¦   ¦   ¦   ¦               ¦   +---hilt
+¦   ¦   ¦   ¦               ¦       +---internal
+¦   ¦   ¦   ¦               ¦           +---processedrootsentinel
+¦   ¦   ¦   ¦               ¦               +---codegen
+¦   ¦   ¦   ¦               +---META-INF
+¦   ¦   ¦   ¦                       app_debug.kotlin_module
+¦   ¦   ¦   ¦                       
+¦   ¦   ¦   +---local_only_symbol_list
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---parseDebugLocalResources
+¦   ¦   ¦   ¦               R-def.txt
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---manifest_merge_blame_file
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugMainManifest
+¦   ¦   ¦   ¦               manifest-merger-blame-debug-report.txt
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---merged_java_res
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugJavaResource
+¦   ¦   ¦   ¦               base.jar
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---merged_jni_libs
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugJniLibFolders
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---merged_manifest
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugMainManifest
+¦   ¦   ¦   ¦               AndroidManifest.xml
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---merged_manifests
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugManifest
+¦   ¦   ¦   ¦               AndroidManifest.xml
+¦   ¦   ¦   ¦               output-metadata.json
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---merged_res
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugResources
+¦   ¦   ¦   ¦               values-af_values-af.arsc.flat
+¦   ¦   ¦   ¦               values-am_values-am.arsc.flat
+¦   ¦   ¦   ¦               values-ar_values-ar.arsc.flat
+¦   ¦   ¦   ¦               values-as_values-as.arsc.flat
+¦   ¦   ¦   ¦               values-az_values-az.arsc.flat
+¦   ¦   ¦   ¦               values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+¦   ¦   ¦   ¦               values-be_values-be.arsc.flat
+¦   ¦   ¦   ¦               values-bg_values-bg.arsc.flat
+¦   ¦   ¦   ¦               values-bn_values-bn.arsc.flat
+¦   ¦   ¦   ¦               values-bs_values-bs.arsc.flat
+¦   ¦   ¦   ¦               values-ca_values-ca.arsc.flat
+¦   ¦   ¦   ¦               values-cs_values-cs.arsc.flat
+¦   ¦   ¦   ¦               values-da_values-da.arsc.flat
+¦   ¦   ¦   ¦               values-de_values-de.arsc.flat
+¦   ¦   ¦   ¦               values-el_values-el.arsc.flat
+¦   ¦   ¦   ¦               values-en-rAU_values-en-rAU.arsc.flat
+¦   ¦   ¦   ¦               values-en-rCA_values-en-rCA.arsc.flat
+¦   ¦   ¦   ¦               values-en-rGB_values-en-rGB.arsc.flat
+¦   ¦   ¦   ¦               values-en-rIN_values-en-rIN.arsc.flat
+¦   ¦   ¦   ¦               values-en-rXC_values-en-rXC.arsc.flat
+¦   ¦   ¦   ¦               values-es-rUS_values-es-rUS.arsc.flat
+¦   ¦   ¦   ¦               values-es_values-es.arsc.flat
+¦   ¦   ¦   ¦               values-et_values-et.arsc.flat
+¦   ¦   ¦   ¦               values-eu_values-eu.arsc.flat
+¦   ¦   ¦   ¦               values-fa_values-fa.arsc.flat
+¦   ¦   ¦   ¦               values-fi_values-fi.arsc.flat
+¦   ¦   ¦   ¦               values-fr-rCA_values-fr-rCA.arsc.flat
+¦   ¦   ¦   ¦               values-fr_values-fr.arsc.flat
+¦   ¦   ¦   ¦               values-gl_values-gl.arsc.flat
+¦   ¦   ¦   ¦               values-gu_values-gu.arsc.flat
+¦   ¦   ¦   ¦               values-hi_values-hi.arsc.flat
+¦   ¦   ¦   ¦               values-hr_values-hr.arsc.flat
+¦   ¦   ¦   ¦               values-hu_values-hu.arsc.flat
+¦   ¦   ¦   ¦               values-hy_values-hy.arsc.flat
+¦   ¦   ¦   ¦               values-in_values-in.arsc.flat
+¦   ¦   ¦   ¦               values-is_values-is.arsc.flat
+¦   ¦   ¦   ¦               values-it_values-it.arsc.flat
+¦   ¦   ¦   ¦               values-iw_values-iw.arsc.flat
+¦   ¦   ¦   ¦               values-ja_values-ja.arsc.flat
+¦   ¦   ¦   ¦               values-ka_values-ka.arsc.flat
+¦   ¦   ¦   ¦               values-kk_values-kk.arsc.flat
+¦   ¦   ¦   ¦               values-km_values-km.arsc.flat
+¦   ¦   ¦   ¦               values-kn_values-kn.arsc.flat
+¦   ¦   ¦   ¦               values-ko_values-ko.arsc.flat
+¦   ¦   ¦   ¦               values-ky_values-ky.arsc.flat
+¦   ¦   ¦   ¦               values-lo_values-lo.arsc.flat
+¦   ¦   ¦   ¦               values-lt_values-lt.arsc.flat
+¦   ¦   ¦   ¦               values-lv_values-lv.arsc.flat
+¦   ¦   ¦   ¦               values-mk_values-mk.arsc.flat
+¦   ¦   ¦   ¦               values-ml_values-ml.arsc.flat
+¦   ¦   ¦   ¦               values-mn_values-mn.arsc.flat
+¦   ¦   ¦   ¦               values-mr_values-mr.arsc.flat
+¦   ¦   ¦   ¦               values-ms_values-ms.arsc.flat
+¦   ¦   ¦   ¦               values-my_values-my.arsc.flat
+¦   ¦   ¦   ¦               values-nb_values-nb.arsc.flat
+¦   ¦   ¦   ¦               values-ne_values-ne.arsc.flat
+¦   ¦   ¦   ¦               values-nl_values-nl.arsc.flat
+¦   ¦   ¦   ¦               values-or_values-or.arsc.flat
+¦   ¦   ¦   ¦               values-pa_values-pa.arsc.flat
+¦   ¦   ¦   ¦               values-pl_values-pl.arsc.flat
+¦   ¦   ¦   ¦               values-pt-rBR_values-pt-rBR.arsc.flat
+¦   ¦   ¦   ¦               values-pt-rPT_values-pt-rPT.arsc.flat
+¦   ¦   ¦   ¦               values-pt_values-pt.arsc.flat
+¦   ¦   ¦   ¦               values-ro_values-ro.arsc.flat
+¦   ¦   ¦   ¦               values-ru_values-ru.arsc.flat
+¦   ¦   ¦   ¦               values-si_values-si.arsc.flat
+¦   ¦   ¦   ¦               values-sk_values-sk.arsc.flat
+¦   ¦   ¦   ¦               values-sl_values-sl.arsc.flat
+¦   ¦   ¦   ¦               values-sq_values-sq.arsc.flat
+¦   ¦   ¦   ¦               values-sr_values-sr.arsc.flat
+¦   ¦   ¦   ¦               values-sv_values-sv.arsc.flat
+¦   ¦   ¦   ¦               values-sw_values-sw.arsc.flat
+¦   ¦   ¦   ¦               values-ta_values-ta.arsc.flat
+¦   ¦   ¦   ¦               values-te_values-te.arsc.flat
+¦   ¦   ¦   ¦               values-th_values-th.arsc.flat
+¦   ¦   ¦   ¦               values-tl_values-tl.arsc.flat
+¦   ¦   ¦   ¦               values-tr_values-tr.arsc.flat
+¦   ¦   ¦   ¦               values-uk_values-uk.arsc.flat
+¦   ¦   ¦   ¦               values-ur_values-ur.arsc.flat
+¦   ¦   ¦   ¦               values-uz_values-uz.arsc.flat
+¦   ¦   ¦   ¦               values-v21_values-v21.arsc.flat
+¦   ¦   ¦   ¦               values-vi_values-vi.arsc.flat
+¦   ¦   ¦   ¦               values-zh-rCN_values-zh-rCN.arsc.flat
+¦   ¦   ¦   ¦               values-zh-rHK_values-zh-rHK.arsc.flat
+¦   ¦   ¦   ¦               values-zh-rTW_values-zh-rTW.arsc.flat
+¦   ¦   ¦   ¦               values-zu_values-zu.arsc.flat
+¦   ¦   ¦   ¦               values_values.arsc.flat
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---merged_res_blame_folder
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugResources
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   ¦               +---multi-v2
+¦   ¦   ¦   ¦                       mergeDebugResources.json
+¦   ¦   ¦   ¦                       values-af.json
+¦   ¦   ¦   ¦                       values-am.json
+¦   ¦   ¦   ¦                       values-ar.json
+¦   ¦   ¦   ¦                       values-as.json
+¦   ¦   ¦   ¦                       values-az.json
+¦   ¦   ¦   ¦                       values-b+sr+Latn.json
+¦   ¦   ¦   ¦                       values-be.json
+¦   ¦   ¦   ¦                       values-bg.json
+¦   ¦   ¦   ¦                       values-bn.json
+¦   ¦   ¦   ¦                       values-bs.json
+¦   ¦   ¦   ¦                       values-ca.json
+¦   ¦   ¦   ¦                       values-cs.json
+¦   ¦   ¦   ¦                       values-da.json
+¦   ¦   ¦   ¦                       values-de.json
+¦   ¦   ¦   ¦                       values-el.json
+¦   ¦   ¦   ¦                       values-en-rAU.json
+¦   ¦   ¦   ¦                       values-en-rCA.json
+¦   ¦   ¦   ¦                       values-en-rGB.json
+¦   ¦   ¦   ¦                       values-en-rIN.json
+¦   ¦   ¦   ¦                       values-en-rXC.json
+¦   ¦   ¦   ¦                       values-es-rUS.json
+¦   ¦   ¦   ¦                       values-es.json
+¦   ¦   ¦   ¦                       values-et.json
+¦   ¦   ¦   ¦                       values-eu.json
+¦   ¦   ¦   ¦                       values-fa.json
+¦   ¦   ¦   ¦                       values-fi.json
+¦   ¦   ¦   ¦                       values-fr-rCA.json
+¦   ¦   ¦   ¦                       values-fr.json
+¦   ¦   ¦   ¦                       values-gl.json
+¦   ¦   ¦   ¦                       values-gu.json
+¦   ¦   ¦   ¦                       values-hi.json
+¦   ¦   ¦   ¦                       values-hr.json
+¦   ¦   ¦   ¦                       values-hu.json
+¦   ¦   ¦   ¦                       values-hy.json
+¦   ¦   ¦   ¦                       values-in.json
+¦   ¦   ¦   ¦                       values-is.json
+¦   ¦   ¦   ¦                       values-it.json
+¦   ¦   ¦   ¦                       values-iw.json
+¦   ¦   ¦   ¦                       values-ja.json
+¦   ¦   ¦   ¦                       values-ka.json
+¦   ¦   ¦   ¦                       values-kk.json
+¦   ¦   ¦   ¦                       values-km.json
+¦   ¦   ¦   ¦                       values-kn.json
+¦   ¦   ¦   ¦                       values-ko.json
+¦   ¦   ¦   ¦                       values-ky.json
+¦   ¦   ¦   ¦                       values-lo.json
+¦   ¦   ¦   ¦                       values-lt.json
+¦   ¦   ¦   ¦                       values-lv.json
+¦   ¦   ¦   ¦                       values-mk.json
+¦   ¦   ¦   ¦                       values-ml.json
+¦   ¦   ¦   ¦                       values-mn.json
+¦   ¦   ¦   ¦                       values-mr.json
+¦   ¦   ¦   ¦                       values-ms.json
+¦   ¦   ¦   ¦                       values-my.json
+¦   ¦   ¦   ¦                       values-nb.json
+¦   ¦   ¦   ¦                       values-ne.json
+¦   ¦   ¦   ¦                       values-nl.json
+¦   ¦   ¦   ¦                       values-or.json
+¦   ¦   ¦   ¦                       values-pa.json
+¦   ¦   ¦   ¦                       values-pl.json
+¦   ¦   ¦   ¦                       values-pt-rBR.json
+¦   ¦   ¦   ¦                       values-pt-rPT.json
+¦   ¦   ¦   ¦                       values-pt.json
+¦   ¦   ¦   ¦                       values-ro.json
+¦   ¦   ¦   ¦                       values-ru.json
+¦   ¦   ¦   ¦                       values-si.json
+¦   ¦   ¦   ¦                       values-sk.json
+¦   ¦   ¦   ¦                       values-sl.json
+¦   ¦   ¦   ¦                       values-sq.json
+¦   ¦   ¦   ¦                       values-sr.json
+¦   ¦   ¦   ¦                       values-sv.json
+¦   ¦   ¦   ¦                       values-sw.json
+¦   ¦   ¦   ¦                       values-ta.json
+¦   ¦   ¦   ¦                       values-te.json
+¦   ¦   ¦   ¦                       values-th.json
+¦   ¦   ¦   ¦                       values-tl.json
+¦   ¦   ¦   ¦                       values-tr.json
+¦   ¦   ¦   ¦                       values-uk.json
+¦   ¦   ¦   ¦                       values-ur.json
+¦   ¦   ¦   ¦                       values-uz.json
+¦   ¦   ¦   ¦                       values-v21.json
+¦   ¦   ¦   ¦                       values-vi.json
+¦   ¦   ¦   ¦                       values-zh-rCN.json
+¦   ¦   ¦   ¦                       values-zh-rHK.json
+¦   ¦   ¦   ¦                       values-zh-rTW.json
+¦   ¦   ¦   ¦                       values-zu.json
+¦   ¦   ¦   ¦                       values.json
+¦   ¦   ¦   ¦                       
+¦   ¦   ¦   +---merged_shaders
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugShaders
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---merged_startup_profile
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugStartupProfile
+¦   ¦   ¦   +---mixed_scope_dex_archive
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---navigation_json
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---extractDeepLinksDebug
+¦   ¦   ¦   ¦               navigation.json
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---nested_resources_validation_report
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---generateDebugResources
+¦   ¦   ¦   ¦               nestedResourcesValidationReport.txt
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---packaged_manifests
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugManifestForPackage
+¦   ¦   ¦   ¦               AndroidManifest.xml
+¦   ¦   ¦   ¦               output-metadata.json
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---packaged_res
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---packageDebugResources
+¦   ¦   ¦   ¦           +---values
+¦   ¦   ¦   ¦                   values.xml
+¦   ¦   ¦   ¦                   
+¦   ¦   ¦   +---processed_res
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugResources
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   ¦                   output-metadata.json
+¦   ¦   ¦   ¦                   resources-debug.ap_
+¦   ¦   ¦   ¦                   
+¦   ¦   ¦   +---project_dex_archive
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   ¦               ¦   3d26d67c8627ed4fbd678dcdfc9fc9ca366430d7df9b8798e438deda8c9b2620_0.jar
+¦   ¦   ¦   ¦               ¦   3d26d67c8627ed4fbd678dcdfc9fc9ca366430d7df9b8798e438deda8c9b2620_1.jar
+¦   ¦   ¦   ¦               ¦   3d26d67c8627ed4fbd678dcdfc9fc9ca366430d7df9b8798e438deda8c9b2620_2.jar
+¦   ¦   ¦   ¦               ¦   3d26d67c8627ed4fbd678dcdfc9fc9ca366430d7df9b8798e438deda8c9b2620_3.jar
+¦   ¦   ¦   ¦               ¦   3d26d67c8627ed4fbd678dcdfc9fc9ca366430d7df9b8798e438deda8c9b2620_4.jar
+¦   ¦   ¦   ¦               ¦   3d26d67c8627ed4fbd678dcdfc9fc9ca366430d7df9b8798e438deda8c9b2620_5.jar
+¦   ¦   ¦   ¦               ¦   
+¦   ¦   ¦   ¦               +---com
+¦   ¦   ¦   ¦               ¦   +---billate
+¦   ¦   ¦   ¦               ¦       +---app
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_ComponentTreeDeps.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_GeneratedInjector.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ActivityC$Builder.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ActivityC.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ActivityCBuilderModule.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ActivityRetainedC$Builder.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ActivityRetainedC.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ActivityRetainedCBuilderModule.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$FragmentC$Builder.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$FragmentC.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$FragmentCBuilderModule.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ServiceC$Builder.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ServiceC.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ServiceCBuilderModule.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$SingletonC.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewC$Builder.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewC.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewCBuilderModule.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewModelC$Builder.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewModelC.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewModelCBuilderModule.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewWithFragmentC$Builder.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewWithFragmentC.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents$ViewWithFragmentCBuilderModule.dex
+¦   ¦   ¦   ¦               ¦           ¦   BillateApplication_HiltComponents.dex
+¦   ¦   ¦   ¦               ¦           ¦   BuildConfig.dex
+¦   ¦   ¦   ¦               ¦           ¦   ComposableSingletons$MainActivityKt$lambda-1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ComposableSingletons$MainActivityKt$lambda-2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ComposableSingletons$MainActivityKt$lambda-3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ComposableSingletons$MainActivityKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityCBuilder.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityCImpl$LazyClassKeyProvider.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityCImpl.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCBuilder.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCImpl$SwitchingProvider.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCImpl.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$Builder.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$FragmentCBuilder.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$FragmentCImpl.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ServiceCBuilder.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ServiceCImpl.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$SingletonCImpl$SwitchingProvider.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$SingletonCImpl.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewCBuilder.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewCImpl.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCBuilder.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl$LazyClassKeyProvider.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl$SwitchingProvider.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewWithFragmentCBuilder.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC$ViewWithFragmentCImpl.dex
+¦   ¦   ¦   ¦               ¦           ¦   DaggerBillateApplication_HiltComponents_SingletonC.dex
+¦   ¦   ¦   ¦               ¦           ¦   Hilt_BillateApplication$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   Hilt_BillateApplication.dex
+¦   ¦   ¦   ¦               ¦           ¦   Hilt_MainActivity$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   Hilt_MainActivity.dex
+¦   ¦   ¦   ¦               ¦           ¦   MainActivity.dex
+¦   ¦   ¦   ¦               ¦           ¦   MainActivity_GeneratedInjector.dex
+¦   ¦   ¦   ¦               ¦           ¦   
+¦   ¦   ¦   ¦               ¦           +---data
+¦   ¦   ¦   ¦               ¦           ¦   ¦   BillRepository.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦   DefaultBillRepository$processBill$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦   DefaultBillRepository.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦   DefaultBillRepository_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦   
+¦   ¦   ¦   ¦               ¦           ¦   +---local
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ApiKeyManager$Companion.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ApiKeyManager.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ApiKeyManager_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateDatabase.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateDatabase_Impl$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateDatabase_Impl.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao$DefaultImpls.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao$insertBillWithLineItems$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$3.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$4.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$5.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$6.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl$7.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillDao_Impl.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillLocalDataSource.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillLocalDataSourceKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillLocalDataSource_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillTransactionEntity.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillWithLineItems.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       LineItemEntity.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       
+¦   ¦   ¦   ¦               ¦           ¦   +---remote
+¦   ¦   ¦   ¦               ¦           ¦           GeminiRemoteDataSource$createModel$2.dex
+¦   ¦   ¦   ¦               ¦           ¦           GeminiRemoteDataSource$createModel$3.dex
+¦   ¦   ¦   ¦               ¦           ¦           GeminiRemoteDataSource$extractReceipt$1.dex
+¦   ¦   ¦   ¦               ¦           ¦           GeminiRemoteDataSource$extractReceipt$inputContent$1.dex
+¦   ¦   ¦   ¦               ¦           ¦           GeminiRemoteDataSource$json$1.dex
+¦   ¦   ¦   ¦               ¦           ¦           GeminiRemoteDataSource.dex
+¦   ¦   ¦   ¦               ¦           ¦           GeminiRemoteDataSource_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦           ImageDataSource.dex
+¦   ¦   ¦   ¦               ¦           ¦           ImageDataSource_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦           
+¦   ¦   ¦   ¦               ¦           +---di
+¦   ¦   ¦   ¦               ¦           ¦       AppModule.dex
+¦   ¦   ¦   ¦               ¦           ¦       AppModule_ProvideBillDaoFactory.dex
+¦   ¦   ¦   ¦               ¦           ¦       AppModule_ProvideBillRepositoryFactory.dex
+¦   ¦   ¦   ¦               ¦           ¦       AppModule_ProvideContentResolverFactory.dex
+¦   ¦   ¦   ¦               ¦           ¦       AppModule_ProvideDatabaseFactory.dex
+¦   ¦   ¦   ¦               ¦           ¦       
+¦   ¦   ¦   ¦               ¦           +---domain
+¦   ¦   ¦   ¦               ¦           ¦       NormalizeCurrencyUseCase.dex
+¦   ¦   ¦   ¦               ¦           ¦       NormalizeCurrencyUseCase_Factory$InstanceHolder.dex
+¦   ¦   ¦   ¦               ¦           ¦       NormalizeCurrencyUseCase_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦       ProcessBillUseCase.dex
+¦   ¦   ¦   ¦               ¦           ¦       ProcessBillUseCase_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦       SaveBillUseCase.dex
+¦   ¦   ¦   ¦               ¦           ¦       SaveBillUseCase_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦       ValidateBillUseCase.dex
+¦   ¦   ¦   ¦               ¦           ¦       ValidateBillUseCase_Factory$InstanceHolder.dex
+¦   ¦   ¦   ¦               ¦           ¦       ValidateBillUseCase_Factory.dex
+¦   ¦   ¦   ¦               ¦           ¦       
+¦   ¦   ¦   ¦               ¦           +---model
+¦   ¦   ¦   ¦               ¦           ¦       BillProcessingOutcome$AutoSaved.dex
+¦   ¦   ¦   ¦               ¦           ¦       BillProcessingOutcome$Failed.dex
+¦   ¦   ¦   ¦               ¦           ¦       BillProcessingOutcome$RequiresReview.dex
+¦   ¦   ¦   ¦               ¦           ¦       BillProcessingOutcome.dex
+¦   ¦   ¦   ¦               ¦           ¦       BillTransaction.dex
+¦   ¦   ¦   ¦               ¦           ¦       Category$Companion.dex
+¦   ¦   ¦   ¦               ¦           ¦       Category.dex
+¦   ¦   ¦   ¦               ¦           ¦       GeminiLineItem$$serializer.dex
+¦   ¦   ¦   ¦               ¦           ¦       GeminiLineItem$Companion.dex
+¦   ¦   ¦   ¦               ¦           ¦       GeminiLineItem.dex
+¦   ¦   ¦   ¦               ¦           ¦       GeminiReceiptResponse$$serializer.dex
+¦   ¦   ¦   ¦               ¦           ¦       GeminiReceiptResponse$Companion.dex
+¦   ¦   ¦   ¦               ¦           ¦       GeminiReceiptResponse.dex
+¦   ¦   ¦   ¦               ¦           ¦       LineItem.dex
+¦   ¦   ¦   ¦               ¦           ¦       
+¦   ¦   ¦   ¦               ¦           +---ui
+¦   ¦   ¦   ¦               ¦           ¦   +---navigation
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$3.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillateNavHostKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-4$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-5$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeRoute$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeRoute.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ReviewRoute$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ReviewRoute.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       
+¦   ¦   ¦   ¦               ¦           ¦   +---screens
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$3.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$3.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$4.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$5.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$6.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$7.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$8.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$5.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$3$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$3$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$3$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$3.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4$1$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$5.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$6$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$6$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$7$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$7.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$8.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$3.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       BillReviewScreenKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-10$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-11$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-12$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-4$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-5$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-6$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-7$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-8$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-9$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-4$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-5$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-4$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$BillCard$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$BillCard$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$2$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$3.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$4.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$4$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$5$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$5.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$6$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$6.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$7.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$galleryLauncher$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       HomeScreenKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$3$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$2.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       SettingsScreenKt.dex
+¦   ¦   ¦   ¦               ¦           ¦   ¦       
+¦   ¦   ¦   ¦               ¦           ¦   +---theme
+¦   ¦   ¦   ¦               ¦           ¦           ThemeKt$BillateTheme$1.dex
+¦   ¦   ¦   ¦               ¦           ¦           ThemeKt.dex
+¦   ¦   ¦   ¦               ¦           ¦           
+¦   ¦   ¦   ¦               ¦           +---viewmodel
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel$addLineItem$1.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel$removeLineItem$1.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel$saveBill$1.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel$updateCategory$1.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel$updateDate$1.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel$updateLineItem$1.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel$updateMerchant$1.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel$updateTotal$1.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_Factory.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules$BindsModule.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules$KeyModule.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.dex
+¦   ¦   ¦   ¦               ¦                   BillReviewViewModel_HiltModules_KeyModule_ProvideFactory.dex
+¦   ¦   ¦   ¦               ¦                   HomeUiState$AutoSaved.dex
+¦   ¦   ¦   ¦               ¦                   HomeUiState$Error.dex
+¦   ¦   ¦   ¦               ¦                   HomeUiState$Initial.dex
+¦   ¦   ¦   ¦               ¦                   HomeUiState$Processing.dex
+¦   ¦   ¦   ¦               ¦                   HomeUiState$ReviewNeeded.dex
+¦   ¦   ¦   ¦               ¦                   HomeUiState.dex
+¦   ¦   ¦   ¦               ¦                   HomeViewModel$onImageSelected$1.dex
+¦   ¦   ¦   ¦               ¦                   HomeViewModel.dex
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_Factory.dex
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules$BindsModule.dex
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules$KeyModule.dex
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules.dex
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.dex
+¦   ¦   ¦   ¦               ¦                   HomeViewModel_HiltModules_KeyModule_ProvideFactory.dex
+¦   ¦   ¦   ¦               ¦                   ReviewUiState$Editing.dex
+¦   ¦   ¦   ¦               ¦                   ReviewUiState$Error.dex
+¦   ¦   ¦   ¦               ¦                   ReviewUiState$Initial.dex
+¦   ¦   ¦   ¦               ¦                   ReviewUiState$Saved.dex
+¦   ¦   ¦   ¦               ¦                   ReviewUiState$Saving.dex
+¦   ¦   ¦   ¦               ¦                   ReviewUiState.dex
+¦   ¦   ¦   ¦               ¦                   SettingsUiState.dex
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel.dex
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_Factory.dex
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules$BindsModule.dex
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules$KeyModule.dex
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules.dex
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.dex
+¦   ¦   ¦   ¦               ¦                   SettingsViewModel_HiltModules_KeyModule_ProvideFactory.dex
+¦   ¦   ¦   ¦               ¦                   
+¦   ¦   ¦   ¦               +---dagger
+¦   ¦   ¦   ¦               ¦   +---hilt
+¦   ¦   ¦   ¦               ¦       +---internal
+¦   ¦   ¦   ¦               ¦           +---aggregatedroot
+¦   ¦   ¦   ¦               ¦           ¦   +---codegen
+¦   ¦   ¦   ¦               ¦           ¦           _com_billate_app_BillateApplication.dex
+¦   ¦   ¦   ¦               ¦           ¦           
+¦   ¦   ¦   ¦               ¦           +---processedrootsentinel
+¦   ¦   ¦   ¦               ¦               +---codegen
+¦   ¦   ¦   ¦               ¦                       _com_billate_app_BillateApplication.dex
+¦   ¦   ¦   ¦               ¦                       
+¦   ¦   ¦   ¦               +---hilt_aggregated_deps
+¦   ¦   ¦   ¦                       _com_billate_app_BillateApplication_GeneratedInjector.dex
+¦   ¦   ¦   ¦                       _com_billate_app_di_AppModule.dex
+¦   ¦   ¦   ¦                       _com_billate_app_MainActivity_GeneratedInjector.dex
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_BindsModule.dex
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_KeyModule.dex
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_HomeViewModel_HiltModules_BindsModule.dex
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_HomeViewModel_HiltModules_KeyModule.dex
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_SettingsViewModel_HiltModules_BindsModule.dex
+¦   ¦   ¦   ¦                       _com_billate_app_viewmodel_SettingsViewModel_HiltModules_KeyModule.dex
+¦   ¦   ¦   ¦                       
+¦   ¦   ¦   +---runtime_symbol_list
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugResources
+¦   ¦   ¦   ¦               R.txt
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---signing_config_versions
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---writeDebugSigningConfigVersions
+¦   ¦   ¦   ¦               signing-config-versions.json
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---source_set_path_map
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mapDebugSourceSetPaths
+¦   ¦   ¦   ¦               file-map.txt
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---stable_resource_ids_file
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugResources
+¦   ¦   ¦   ¦               stableIds.txt
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---sub_project_dex_archive
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---symbol_list_with_package_name
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugResources
+¦   ¦   ¦   ¦               package-aware-r.txt
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---validate_signing_config
+¦   ¦   ¦       +---debug
+¦   ¦   ¦           +---validateSigningDebug
+¦   ¦   +---kotlin
+¦   ¦   ¦   +---compileDebugKotlin
+¦   ¦   ¦   ¦   +---cacheable
+¦   ¦   ¦   ¦   ¦   ¦   last-build.bin
+¦   ¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   ¦   +---caches-jvm
+¦   ¦   ¦   ¦   ¦       +---inputs
+¦   ¦   ¦   ¦   ¦       ¦       source-to-output.tab
+¦   ¦   ¦   ¦   ¦       ¦       source-to-output.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦       source-to-output.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦       source-to-output.tab.len
+¦   ¦   ¦   ¦   ¦       ¦       source-to-output.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦       source-to-output.tab_i
+¦   ¦   ¦   ¦   ¦       ¦       source-to-output.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦   ¦       +---jvm
+¦   ¦   ¦   ¦   ¦       ¦   +---kotlin
+¦   ¦   ¦   ¦   ¦       ¦           class-attributes.tab
+¦   ¦   ¦   ¦   ¦       ¦           class-attributes.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦           class-attributes.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦           class-attributes.tab.len
+¦   ¦   ¦   ¦   ¦       ¦           class-attributes.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦           class-attributes.tab_i
+¦   ¦   ¦   ¦   ¦       ¦           class-attributes.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦           class-fq-name-to-source.tab
+¦   ¦   ¦   ¦   ¦       ¦           class-fq-name-to-source.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦           class-fq-name-to-source.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦           class-fq-name-to-source.tab.len
+¦   ¦   ¦   ¦   ¦       ¦           class-fq-name-to-source.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦           class-fq-name-to-source.tab_i
+¦   ¦   ¦   ¦   ¦       ¦           class-fq-name-to-source.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦           internal-name-to-source.tab
+¦   ¦   ¦   ¦   ¦       ¦           internal-name-to-source.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦           internal-name-to-source.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦           internal-name-to-source.tab.len
+¦   ¦   ¦   ¦   ¦       ¦           internal-name-to-source.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦           internal-name-to-source.tab_i
+¦   ¦   ¦   ¦   ¦       ¦           internal-name-to-source.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦           package-parts.tab
+¦   ¦   ¦   ¦   ¦       ¦           package-parts.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦           package-parts.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦           package-parts.tab.len
+¦   ¦   ¦   ¦   ¦       ¦           package-parts.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦           package-parts.tab_i
+¦   ¦   ¦   ¦   ¦       ¦           package-parts.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦           proto.tab
+¦   ¦   ¦   ¦   ¦       ¦           proto.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦           proto.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦           proto.tab.len
+¦   ¦   ¦   ¦   ¦       ¦           proto.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦           proto.tab_i
+¦   ¦   ¦   ¦   ¦       ¦           proto.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦           source-to-classes.tab
+¦   ¦   ¦   ¦   ¦       ¦           source-to-classes.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦           source-to-classes.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦           source-to-classes.tab.len
+¦   ¦   ¦   ¦   ¦       ¦           source-to-classes.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦           source-to-classes.tab_i
+¦   ¦   ¦   ¦   ¦       ¦           source-to-classes.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦           subtypes.tab
+¦   ¦   ¦   ¦   ¦       ¦           subtypes.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦           subtypes.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦           subtypes.tab.len
+¦   ¦   ¦   ¦   ¦       ¦           subtypes.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦           subtypes.tab_i
+¦   ¦   ¦   ¦   ¦       ¦           subtypes.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦           supertypes.tab
+¦   ¦   ¦   ¦   ¦       ¦           supertypes.tab.keystream
+¦   ¦   ¦   ¦   ¦       ¦           supertypes.tab.keystream.len
+¦   ¦   ¦   ¦   ¦       ¦           supertypes.tab.len
+¦   ¦   ¦   ¦   ¦       ¦           supertypes.tab.values.at
+¦   ¦   ¦   ¦   ¦       ¦           supertypes.tab_i
+¦   ¦   ¦   ¦   ¦       ¦           supertypes.tab_i.len
+¦   ¦   ¦   ¦   ¦       ¦           
+¦   ¦   ¦   ¦   ¦       +---lookups
+¦   ¦   ¦   ¦   ¦               counters.tab
+¦   ¦   ¦   ¦   ¦               file-to-id.tab
+¦   ¦   ¦   ¦   ¦               file-to-id.tab.keystream
+¦   ¦   ¦   ¦   ¦               file-to-id.tab.keystream.len
+¦   ¦   ¦   ¦   ¦               file-to-id.tab.len
+¦   ¦   ¦   ¦   ¦               file-to-id.tab.values.at
+¦   ¦   ¦   ¦   ¦               file-to-id.tab_i
+¦   ¦   ¦   ¦   ¦               file-to-id.tab_i.len
+¦   ¦   ¦   ¦   ¦               id-to-file.tab
+¦   ¦   ¦   ¦   ¦               id-to-file.tab.keystream
+¦   ¦   ¦   ¦   ¦               id-to-file.tab.keystream.len
+¦   ¦   ¦   ¦   ¦               id-to-file.tab.len
+¦   ¦   ¦   ¦   ¦               id-to-file.tab.values.at
+¦   ¦   ¦   ¦   ¦               id-to-file.tab_i
+¦   ¦   ¦   ¦   ¦               id-to-file.tab_i.len
+¦   ¦   ¦   ¦   ¦               lookups.tab
+¦   ¦   ¦   ¦   ¦               lookups.tab.keystream
+¦   ¦   ¦   ¦   ¦               lookups.tab.keystream.len
+¦   ¦   ¦   ¦   ¦               lookups.tab.len
+¦   ¦   ¦   ¦   ¦               lookups.tab.values.at
+¦   ¦   ¦   ¦   ¦               lookups.tab_i
+¦   ¦   ¦   ¦   ¦               lookups.tab_i.len
+¦   ¦   ¦   ¦   ¦               
+¦   ¦   ¦   ¦   +---classpath-snapshot
+¦   ¦   ¦   ¦   ¦       shrunk-classpath-snapshot.bin
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---local-state
+¦   ¦   ¦   ¦           build-history.bin
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---kspDebugKotlin
+¦   ¦   ¦       +---cacheable
+¦   ¦   ¦       +---classpath-snapshot
+¦   ¦   ¦       +---local-state
+¦   ¦   +---kspCaches
+¦   ¦   ¦   +---debug
+¦   ¦   ¦       ¦   ap-classpath-entries.bin
+¦   ¦   ¦       ¦   caches.uptodate
+¦   ¦   ¦       ¦   classpath-entries.bin
+¦   ¦   ¦       ¦   classpath-structure.bin
+¦   ¦   ¦       ¦   sealed
+¦   ¦   ¦       ¦   sealed.keystream.len
+¦   ¦   ¦       ¦   sealed.len
+¦   ¦   ¦       ¦   sealed_i.len
+¦   ¦   ¦       ¦   sourceToOutputs
+¦   ¦   ¦       ¦   sourceToOutputs.keystream
+¦   ¦   ¦       ¦   sourceToOutputs.keystream.len
+¦   ¦   ¦       ¦   sourceToOutputs.len
+¦   ¦   ¦       ¦   sourceToOutputs.values.at
+¦   ¦   ¦       ¦   sourceToOutputs_i
+¦   ¦   ¦       ¦   sourceToOutputs_i.len
+¦   ¦   ¦       ¦   symbols
+¦   ¦   ¦       ¦   symbols.keystream
+¦   ¦   ¦       ¦   symbols.keystream.len
+¦   ¦   ¦       ¦   symbols.len
+¦   ¦   ¦       ¦   symbols.values
+¦   ¦   ¦       ¦   symbols.values.at
+¦   ¦   ¦       ¦   symbols.values.s
+¦   ¦   ¦       ¦   symbols_i
+¦   ¦   ¦       ¦   symbols_i.len
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +---backups
+¦   ¦   ¦       ¦   +---java
+¦   ¦   ¦       ¦       +---byRounds
+¦   ¦   ¦       ¦           +---1
+¦   ¦   ¦       ¦           ¦   +---com
+¦   ¦   ¦       ¦           ¦   ¦   +---billate
+¦   ¦   ¦       ¦           ¦   ¦       +---app
+¦   ¦   ¦       ¦           ¦   ¦           ¦   BillateApplication_GeneratedInjector.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦   Hilt_MainActivity.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦   MainActivity_GeneratedInjector.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦   
+¦   ¦   ¦       ¦           ¦   ¦           +---data
+¦   ¦   ¦       ¦           ¦   ¦           ¦   ¦   DefaultBillRepository_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦   ¦   
+¦   ¦   ¦       ¦           ¦   ¦           ¦   +---local
+¦   ¦   ¦       ¦           ¦   ¦           ¦   ¦       ApiKeyManager_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦   ¦       BillateDatabase_Impl.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦   ¦       BillDao_Impl.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦   ¦       BillLocalDataSource_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦   ¦       
+¦   ¦   ¦       ¦           ¦   ¦           ¦   +---remote
+¦   ¦   ¦       ¦           ¦   ¦           ¦           GeminiRemoteDataSource_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦           ImageDataSource_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦           
+¦   ¦   ¦       ¦           ¦   ¦           +---di
+¦   ¦   ¦       ¦           ¦   ¦           ¦       AppModule_ProvideBillDaoFactory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦       AppModule_ProvideBillRepositoryFactory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦       AppModule_ProvideContentResolverFactory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦       AppModule_ProvideDatabaseFactory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦       
+¦   ¦   ¦       ¦           ¦   ¦           +---domain
+¦   ¦   ¦       ¦           ¦   ¦           ¦       NormalizeCurrencyUseCase_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦       ProcessBillUseCase_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦       SaveBillUseCase_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦       ValidateBillUseCase_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦           ¦       
+¦   ¦   ¦       ¦           ¦   ¦           +---viewmodel
+¦   ¦   ¦       ¦           ¦   ¦                   BillReviewViewModel_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦                   BillReviewViewModel_HiltModules.java
+¦   ¦   ¦       ¦           ¦   ¦                   HomeViewModel_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦                   HomeViewModel_HiltModules.java
+¦   ¦   ¦       ¦           ¦   ¦                   SettingsViewModel_Factory.java
+¦   ¦   ¦       ¦           ¦   ¦                   SettingsViewModel_HiltModules.java
+¦   ¦   ¦       ¦           ¦   ¦                   
+¦   ¦   ¦       ¦           ¦   +---dagger
+¦   ¦   ¦       ¦           ¦   ¦   +---hilt
+¦   ¦   ¦       ¦           ¦   ¦       +---internal
+¦   ¦   ¦       ¦           ¦   ¦           +---aggregatedroot
+¦   ¦   ¦       ¦           ¦   ¦               +---codegen
+¦   ¦   ¦       ¦           ¦   ¦                       _com_billate_app_BillateApplication.java
+¦   ¦   ¦       ¦           ¦   ¦                       
+¦   ¦   ¦       ¦           ¦   +---hilt_aggregated_deps
+¦   ¦   ¦       ¦           ¦           _com_billate_app_di_AppModule.java
+¦   ¦   ¦       ¦           ¦           
+¦   ¦   ¦       ¦           +---2
+¦   ¦   ¦       ¦               +---com
+¦   ¦   ¦       ¦               ¦   +---billate
+¦   ¦   ¦       ¦               ¦       +---app
+¦   ¦   ¦       ¦               ¦           +---viewmodel
+¦   ¦   ¦       ¦               ¦                   BillReviewViewModel_HiltModules_KeyModule_ProvideFactory.java
+¦   ¦   ¦       ¦               ¦                   HomeViewModel_HiltModules_KeyModule_ProvideFactory.java
+¦   ¦   ¦       ¦               ¦                   SettingsViewModel_HiltModules_KeyModule_ProvideFactory.java
+¦   ¦   ¦       ¦               ¦                   
+¦   ¦   ¦       ¦               +---hilt_aggregated_deps
+¦   ¦   ¦       ¦                       _com_billate_app_BillateApplication_GeneratedInjector.java
+¦   ¦   ¦       ¦                       _com_billate_app_MainActivity_GeneratedInjector.java
+¦   ¦   ¦       ¦                       _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_BindsModule.java
+¦   ¦   ¦       ¦                       _com_billate_app_viewmodel_BillReviewViewModel_HiltModules_KeyModule.java
+¦   ¦   ¦       ¦                       _com_billate_app_viewmodel_HomeViewModel_HiltModules_BindsModule.java
+¦   ¦   ¦       ¦                       _com_billate_app_viewmodel_HomeViewModel_HiltModules_KeyModule.java
+¦   ¦   ¦       ¦                       _com_billate_app_viewmodel_SettingsViewModel_HiltModules_BindsModule.java
+¦   ¦   ¦       ¦                       _com_billate_app_viewmodel_SettingsViewModel_HiltModules_KeyModule.java
+¦   ¦   ¦       ¦                       
+¦   ¦   ¦       +---classLookups
+¦   ¦   ¦       ¦       counters.tab
+¦   ¦   ¦       ¦       file-to-id.tab
+¦   ¦   ¦       ¦       file-to-id.tab.keystream
+¦   ¦   ¦       ¦       file-to-id.tab.keystream.len
+¦   ¦   ¦       ¦       file-to-id.tab.len
+¦   ¦   ¦       ¦       file-to-id.tab.values.at
+¦   ¦   ¦       ¦       file-to-id.tab_i
+¦   ¦   ¦       ¦       file-to-id.tab_i.len
+¦   ¦   ¦       ¦       id-to-file.tab
+¦   ¦   ¦       ¦       id-to-file.tab.keystream
+¦   ¦   ¦       ¦       id-to-file.tab.keystream.len
+¦   ¦   ¦       ¦       id-to-file.tab.len
+¦   ¦   ¦       ¦       id-to-file.tab.values.at
+¦   ¦   ¦       ¦       id-to-file.tab_i
+¦   ¦   ¦       ¦       id-to-file.tab_i.len
+¦   ¦   ¦       ¦       lookups.tab
+¦   ¦   ¦       ¦       lookups.tab.keystream
+¦   ¦   ¦       ¦       lookups.tab.keystream.len
+¦   ¦   ¦       ¦       lookups.tab.len
+¦   ¦   ¦       ¦       lookups.tab.values.at
+¦   ¦   ¦       ¦       lookups.tab_i
+¦   ¦   ¦       ¦       lookups.tab_i.len
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---logs
+¦   ¦   ¦       +---symbolLookups
+¦   ¦   ¦               counters.tab
+¦   ¦   ¦               file-to-id.tab
+¦   ¦   ¦               file-to-id.tab.keystream
+¦   ¦   ¦               file-to-id.tab.keystream.len
+¦   ¦   ¦               file-to-id.tab.len
+¦   ¦   ¦               file-to-id.tab.values.at
+¦   ¦   ¦               file-to-id.tab_i
+¦   ¦   ¦               file-to-id.tab_i.len
+¦   ¦   ¦               id-to-file.tab
+¦   ¦   ¦               id-to-file.tab.keystream
+¦   ¦   ¦               id-to-file.tab.keystream.len
+¦   ¦   ¦               id-to-file.tab.len
+¦   ¦   ¦               id-to-file.tab.values.at
+¦   ¦   ¦               id-to-file.tab_i
+¦   ¦   ¦               id-to-file.tab_i.len
+¦   ¦   ¦               lookups.tab
+¦   ¦   ¦               lookups.tab.keystream
+¦   ¦   ¦               lookups.tab.keystream.len
+¦   ¦   ¦               lookups.tab.len
+¦   ¦   ¦               lookups.tab.values.at
+¦   ¦   ¦               lookups.tab_i
+¦   ¦   ¦               lookups.tab_i.len
+¦   ¦   ¦               
+¦   ¦   +---outputs
+¦   ¦   ¦   +---apk
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦           app-debug.apk
+¦   ¦   ¦   ¦           output-metadata.json
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---logs
+¦   ¦   ¦           manifest-merger-debug-report.txt
+¦   ¦   ¦           
+¦   ¦   +---snapshot
+¦   ¦   ¦   +---kotlin
+¦   ¦   +---tmp
+¦   ¦       +---compileDebugJavaWithJavac
+¦   ¦       ¦   ¦   previous-compilation-data.bin
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---compileTransaction
+¦   ¦       ¦       +---backup-dir
+¦   ¦       ¦       +---stash-dir
+¦   ¦       ¦               BillReviewViewModel_Factory.class.uniqueId2
+¦   ¦       ¦               BillReviewViewModel_HiltModules$BindsModule.class.uniqueId1
+¦   ¦       ¦               BillReviewViewModel_HiltModules$KeyModule.class.uniqueId4
+¦   ¦       ¦               BillReviewViewModel_HiltModules.class.uniqueId3
+¦   ¦       ¦               BillReviewViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder.class.uniqueId5
+¦   ¦       ¦               BillReviewViewModel_HiltModules_KeyModule_ProvideFactory.class.uniqueId0
+¦   ¦       ¦               
+¦   ¦       +---hiltJavaCompileDebug
+¦   ¦       ¦   ¦   previous-compilation-data.bin
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---compileTransaction
+¦   ¦       ¦       +---backup-dir
+¦   ¦       ¦       +---stash-dir
+¦   ¦       ¦               BillateApplication_HiltComponents$ActivityC$Builder.class.uniqueId31
+¦   ¦       ¦               BillateApplication_HiltComponents$ActivityC.class.uniqueId45
+¦   ¦       ¦               BillateApplication_HiltComponents$ActivityCBuilderModule.class.uniqueId19
+¦   ¦       ¦               BillateApplication_HiltComponents$ActivityRetainedC$Builder.class.uniqueId20
+¦   ¦       ¦               BillateApplication_HiltComponents$ActivityRetainedC.class.uniqueId12
+¦   ¦       ¦               BillateApplication_HiltComponents$ActivityRetainedCBuilderModule.class.uniqueId21
+¦   ¦       ¦               BillateApplication_HiltComponents$FragmentC$Builder.class.uniqueId24
+¦   ¦       ¦               BillateApplication_HiltComponents$FragmentC.class.uniqueId39
+¦   ¦       ¦               BillateApplication_HiltComponents$FragmentCBuilderModule.class.uniqueId8
+¦   ¦       ¦               BillateApplication_HiltComponents$ServiceC$Builder.class.uniqueId25
+¦   ¦       ¦               BillateApplication_HiltComponents$ServiceC.class.uniqueId33
+¦   ¦       ¦               BillateApplication_HiltComponents$ServiceCBuilderModule.class.uniqueId9
+¦   ¦       ¦               BillateApplication_HiltComponents$SingletonC.class.uniqueId4
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewC$Builder.class.uniqueId23
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewC.class.uniqueId26
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewCBuilderModule.class.uniqueId17
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewModelC$Builder.class.uniqueId35
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewModelC.class.uniqueId5
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewModelCBuilderModule.class.uniqueId22
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewWithFragmentC$Builder.class.uniqueId32
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewWithFragmentC.class.uniqueId40
+¦   ¦       ¦               BillateApplication_HiltComponents$ViewWithFragmentCBuilderModule.class.uniqueId49
+¦   ¦       ¦               BillateApplication_HiltComponents.class.uniqueId6
+¦   ¦       ¦               BillateApplication_HiltComponents.java.uniqueId2
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityCBuilder.class.uniqueId41
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityCImpl$LazyClassKeyProvider.class.uniqueId1
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityCImpl.class.uniqueId34
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCBuilder.class.uniqueId14
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCImpl$SwitchingProvider.class.uniqueId15
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ActivityRetainedCImpl.class.uniqueId44
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$Builder.class.uniqueId37
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$FragmentCBuilder.class.uniqueId16
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$FragmentCImpl.class.uniqueId7
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ServiceCBuilder.class.uniqueId3
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ServiceCImpl.class.uniqueId48
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$SingletonCImpl$SwitchingProvider.class.uniqueId18
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$SingletonCImpl.class.uniqueId43
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewCBuilder.class.uniqueId30
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewCImpl.class.uniqueId0
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCBuilder.class.uniqueId38
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl$LazyClassKeyProvider.class.uniqueId29
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl$SwitchingProvider.class.uniqueId10
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewModelCImpl.class.uniqueId36
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewWithFragmentCBuilder.class.uniqueId46
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC$ViewWithFragmentCImpl.class.uniqueId13
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC.class.uniqueId11
+¦   ¦       ¦               DaggerBillateApplication_HiltComponents_SingletonC.java.uniqueId42
+¦   ¦       ¦               Hilt_BillateApplication$1.class.uniqueId28
+¦   ¦       ¦               Hilt_BillateApplication.class.uniqueId27
+¦   ¦       ¦               Hilt_BillateApplication.java.uniqueId47
+¦   ¦       ¦               
+¦   ¦       +---kotlin-classes
+¦   ¦           +---debug
+¦   ¦               +---com
+¦   ¦               ¦   +---billate
+¦   ¦               ¦       +---app
+¦   ¦               ¦           ¦   BillateApplication.class
+¦   ¦               ¦           ¦   ComposableSingletons$MainActivityKt$lambda-1$1.class
+¦   ¦               ¦           ¦   ComposableSingletons$MainActivityKt$lambda-2$1.class
+¦   ¦               ¦           ¦   ComposableSingletons$MainActivityKt$lambda-3$1.class
+¦   ¦               ¦           ¦   ComposableSingletons$MainActivityKt.class
+¦   ¦               ¦           ¦   MainActivity.class
+¦   ¦               ¦           ¦   
+¦   ¦               ¦           +---data
+¦   ¦               ¦           ¦   ¦   BillRepository.class
+¦   ¦               ¦           ¦   ¦   DefaultBillRepository$processBill$1.class
+¦   ¦               ¦           ¦   ¦   DefaultBillRepository.class
+¦   ¦               ¦           ¦   ¦   
+¦   ¦               ¦           ¦   +---local
+¦   ¦               ¦           ¦   ¦       ApiKeyManager$Companion.class
+¦   ¦               ¦           ¦   ¦       ApiKeyManager.class
+¦   ¦               ¦           ¦   ¦       BillateDatabase.class
+¦   ¦               ¦           ¦   ¦       BillDao$DefaultImpls.class
+¦   ¦               ¦           ¦   ¦       BillDao$insertBillWithLineItems$1.class
+¦   ¦               ¦           ¦   ¦       BillDao.class
+¦   ¦               ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1$2$1.class
+¦   ¦               ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1$2.class
+¦   ¦               ¦           ¦   ¦       BillLocalDataSource$getAllBills$$inlined$map$1.class
+¦   ¦               ¦           ¦   ¦       BillLocalDataSource.class
+¦   ¦               ¦           ¦   ¦       BillLocalDataSourceKt.class
+¦   ¦               ¦           ¦   ¦       BillTransactionEntity.class
+¦   ¦               ¦           ¦   ¦       BillWithLineItems.class
+¦   ¦               ¦           ¦   ¦       LineItemEntity.class
+¦   ¦               ¦           ¦   ¦       
+¦   ¦               ¦           ¦   +---remote
+¦   ¦               ¦           ¦           GeminiRemoteDataSource$createModel$2.class
+¦   ¦               ¦           ¦           GeminiRemoteDataSource$createModel$3.class
+¦   ¦               ¦           ¦           GeminiRemoteDataSource$extractReceipt$1.class
+¦   ¦               ¦           ¦           GeminiRemoteDataSource$extractReceipt$inputContent$1.class
+¦   ¦               ¦           ¦           GeminiRemoteDataSource$json$1.class
+¦   ¦               ¦           ¦           GeminiRemoteDataSource.class
+¦   ¦               ¦           ¦           ImageDataSource.class
+¦   ¦               ¦           ¦           
+¦   ¦               ¦           +---di
+¦   ¦               ¦           ¦       AppModule.class
+¦   ¦               ¦           ¦       
+¦   ¦               ¦           +---domain
+¦   ¦               ¦           ¦       NormalizeCurrencyUseCase.class
+¦   ¦               ¦           ¦       ProcessBillUseCase.class
+¦   ¦               ¦           ¦       SaveBillUseCase.class
+¦   ¦               ¦           ¦       ValidateBillUseCase.class
+¦   ¦               ¦           ¦       
+¦   ¦               ¦           +---model
+¦   ¦               ¦           ¦       BillProcessingOutcome$AutoSaved.class
+¦   ¦               ¦           ¦       BillProcessingOutcome$Failed.class
+¦   ¦               ¦           ¦       BillProcessingOutcome$RequiresReview.class
+¦   ¦               ¦           ¦       BillProcessingOutcome.class
+¦   ¦               ¦           ¦       BillTransaction.class
+¦   ¦               ¦           ¦       Category$Companion.class
+¦   ¦               ¦           ¦       Category.class
+¦   ¦               ¦           ¦       GeminiLineItem$$serializer.class
+¦   ¦               ¦           ¦       GeminiLineItem$Companion.class
+¦   ¦               ¦           ¦       GeminiLineItem.class
+¦   ¦               ¦           ¦       GeminiReceiptResponse$$serializer.class
+¦   ¦               ¦           ¦       GeminiReceiptResponse$Companion.class
+¦   ¦               ¦           ¦       GeminiReceiptResponse.class
+¦   ¦               ¦           ¦       LineItem.class
+¦   ¦               ¦           ¦       
+¦   ¦               ¦           +---ui
+¦   ¦               ¦           ¦   +---navigation
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1$1$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$2$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1$2.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$1$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2$2.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1$2.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2$1.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$2.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt$BillateNavHost$3.class
+¦   ¦               ¦           ¦   ¦       BillateNavHostKt.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-1$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-2$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-3$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-4$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt$lambda-5$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillateNavHostKt.class
+¦   ¦               ¦           ¦   ¦       HomeRoute$1.class
+¦   ¦               ¦           ¦   ¦       HomeRoute.class
+¦   ¦               ¦           ¦   ¦       ReviewRoute$1.class
+¦   ¦               ¦           ¦   ¦       ReviewRoute.class
+¦   ¦               ¦           ¦   ¦       
+¦   ¦               ¦           ¦   +---screens
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$2.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$3$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$3.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$2.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$3.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$4.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$5.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$6.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$7.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4$8.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$4.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$BillReviewScreen$5.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$2$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$3$1$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1$1$3$2$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$LineItemCard$2.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$2.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$3$1$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$3.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$1$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$2.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$3$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4$1$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4$1$2$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2$4.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4$2.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$4.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$5.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$6$1$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$6$2$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$7$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$7.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$8.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$2.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1$invoke$$inlined$itemsIndexed$default$3.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$1.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt$ReviewContent$2.class
+¦   ¦               ¦           ¦   ¦       BillReviewScreenKt.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-1$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-10$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-11$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-12$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-2$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-3$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-4$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-5$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-6$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-7$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-8$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt$lambda-9$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$BillReviewScreenKt.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-1$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-2$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-3$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-4$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt$lambda-5$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$HomeScreenKt.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-1$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-2$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-3$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt$lambda-4$1.class
+¦   ¦               ¦           ¦   ¦       ComposableSingletons$SettingsScreenKt.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$BillCard$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$BillCard$2.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$2$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$2.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$2.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$3.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1$invoke$$inlined$items$default$4.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3$1$3$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$3.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$4$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$5$1$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$5.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$6$1$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$6.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$7.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt$HomeScreen$galleryLauncher$1.class
+¦   ¦               ¦           ¦   ¦       HomeScreenKt.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$1.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2$1$1.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2$2.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$2.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1$1$3$1.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1$1$1.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$1.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt$SettingsScreen$2.class
+¦   ¦               ¦           ¦   ¦       SettingsScreenKt.class
+¦   ¦               ¦           ¦   ¦       
+¦   ¦               ¦           ¦   +---theme
+¦   ¦               ¦           ¦           ThemeKt$BillateTheme$1.class
+¦   ¦               ¦           ¦           ThemeKt.class
+¦   ¦               ¦           ¦           
+¦   ¦               ¦           +---viewmodel
+¦   ¦               ¦                   BillReviewViewModel$addLineItem$1.class
+¦   ¦               ¦                   BillReviewViewModel$removeLineItem$1.class
+¦   ¦               ¦                   BillReviewViewModel$saveBill$1.class
+¦   ¦               ¦                   BillReviewViewModel$updateCategory$1.class
+¦   ¦               ¦                   BillReviewViewModel$updateDate$1.class
+¦   ¦               ¦                   BillReviewViewModel$updateLineItem$1.class
+¦   ¦               ¦                   BillReviewViewModel$updateMerchant$1.class
+¦   ¦               ¦                   BillReviewViewModel$updateTotal$1.class
+¦   ¦               ¦                   BillReviewViewModel.class
+¦   ¦               ¦                   HomeUiState$AutoSaved.class
+¦   ¦               ¦                   HomeUiState$Error.class
+¦   ¦               ¦                   HomeUiState$Initial.class
+¦   ¦               ¦                   HomeUiState$Processing.class
+¦   ¦               ¦                   HomeUiState$ReviewNeeded.class
+¦   ¦               ¦                   HomeUiState.class
+¦   ¦               ¦                   HomeViewModel$onImageSelected$1.class
+¦   ¦               ¦                   HomeViewModel.class
+¦   ¦               ¦                   ReviewUiState$Editing.class
+¦   ¦               ¦                   ReviewUiState$Error.class
+¦   ¦               ¦                   ReviewUiState$Initial.class
+¦   ¦               ¦                   ReviewUiState$Saved.class
+¦   ¦               ¦                   ReviewUiState$Saving.class
+¦   ¦               ¦                   ReviewUiState.class
+¦   ¦               ¦                   SettingsUiState.class
+¦   ¦               ¦                   SettingsViewModel.class
+¦   ¦               ¦                   
+¦   ¦               +---META-INF
+¦   ¦                       app_debug.kotlin_module
+¦   ¦                       
+¦   +---src
+¦       +---main
+¦           ¦   AndroidManifest.xml
+¦           ¦   
+¦           +---java
+¦           ¦   +---com
+¦           ¦       +---billate
+¦           ¦           +---app
+¦           ¦               ¦   BillateApplication.kt
+¦           ¦               ¦   MainActivity.kt
+¦           ¦               ¦   
+¦           ¦               +---data
+¦           ¦               ¦   ¦   BillRepository.kt
+¦           ¦               ¦   ¦   DefaultBillRepository.kt
+¦           ¦               ¦   ¦   
+¦           ¦               ¦   +---local
+¦           ¦               ¦   ¦       ApiKeyManager.kt
+¦           ¦               ¦   ¦       BillateDatabase.kt
+¦           ¦               ¦   ¦       BillDao.kt
+¦           ¦               ¦   ¦       BillLocalDataSource.kt
+¦           ¦               ¦   ¦       BillTransactionEntity.kt
+¦           ¦               ¦   ¦       BillWithLineItems.kt
+¦           ¦               ¦   ¦       LineItemEntity.kt
+¦           ¦               ¦   ¦       
+¦           ¦               ¦   +---remote
+¦           ¦               ¦           GeminiRemoteDataSource.kt
+¦           ¦               ¦           ImageDataSource.kt
+¦           ¦               ¦           
+¦           ¦               +---di
+¦           ¦               ¦       AppModule.kt
+¦           ¦               ¦       
+¦           ¦               +---domain
+¦           ¦               ¦       NormalizeCurrencyUseCase.kt
+¦           ¦               ¦       ProcessBillUseCase.kt
+¦           ¦               ¦       SaveBillUseCase.kt
+¦           ¦               ¦       ValidateBillUseCase.kt
+¦           ¦               ¦       
+¦           ¦               +---model
+¦           ¦               ¦       BillProcessingOutcome.kt
+¦           ¦               ¦       BillTransaction.kt
+¦           ¦               ¦       Category.kt
+¦           ¦               ¦       GeminiReceiptResponse.kt
+¦           ¦               ¦       
+¦           ¦               +---ui
+¦           ¦               ¦   +---navigation
+¦           ¦               ¦   ¦       BillateNavHost.kt
+¦           ¦               ¦   ¦       Routes.kt
+¦           ¦               ¦   ¦       
+¦           ¦               ¦   +---screens
+¦           ¦               ¦   ¦       BillReviewScreen.kt
+¦           ¦               ¦   ¦       HomeScreen.kt
+¦           ¦               ¦   ¦       SettingsScreen.kt
+¦           ¦               ¦   ¦       
+¦           ¦               ¦   +---theme
+¦           ¦               ¦           Theme.kt
+¦           ¦               ¦           
+¦           ¦               +---viewmodel
+¦           ¦                       BillReviewViewModel.kt
+¦           ¦                       HomeViewModel.kt
+¦           ¦                       SettingsViewModel.kt
+¦           ¦                       
+¦           +---res
+¦               +---values
+¦                       strings.xml
+¦                       themes.xml
+¦                       
++---docs
+¦   ¦   architecture.md
+¦   ¦   billate-build-and-deps.md
+¦   ¦   crucial-code-samples.md
+¦   ¦   gemini-debugging.md
+¦   ¦   product-description.md
+¦   ¦   prompt-spec.md
+¦   ¦   tech-stack.md
+¦   ¦   
+¦   +---repo
+¦           android_architecture.md
+¦           README.md
+¦           styleguide.md
+¦           
++---gradle
+    +---wrapper
+            gradle-wrapper.jar
+            gradle-wrapper.properties
+            

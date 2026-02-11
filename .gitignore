@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Local configuration
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# APKs
+*.apk
+
+# KSP/annotation processing
+.ksp/
+
+# Generated
+**/out/
