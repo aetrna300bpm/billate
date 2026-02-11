@@ -3,10 +3,10 @@ package com.billate.app.di
 import android.content.ContentResolver
 import android.content.Context
 import androidx.room.Room
-import com.billate.app.data.BillRepository
-import com.billate.app.data.DefaultBillRepository
-import com.billate.app.data.local.BillDao
 import com.billate.app.data.local.BillateDatabase
+import com.billate.app.data.local.TransactionDao
+import com.billate.app.data.repository.DefaultTransactionRepository
+import com.billate.app.data.repository.TransactionRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +26,7 @@ object AppModule {
             .build()
 
     @Provides
-    fun provideBillDao(db: BillateDatabase): BillDao = db.billDao()
+    fun provideTransactionDao(db: BillateDatabase): TransactionDao = db.transactionDao()
 
     @Provides
     @Singleton
@@ -35,5 +35,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideBillRepository(impl: DefaultBillRepository): BillRepository = impl
+    fun provideTransactionRepository(impl: DefaultTransactionRepository): TransactionRepository =
+        impl
 }

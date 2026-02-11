@@ -2,7 +2,6 @@ package com.billate.app.data.remote
 
 import android.graphics.Bitmap
 import com.billate.app.data.local.ApiKeyManager
-import com.billate.app.model.GeminiReceiptResponse
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.content
 import com.google.ai.client.generativeai.type.generationConfig
@@ -10,8 +9,12 @@ import kotlinx.serialization.json.Json
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Sends receipt images to Gemini and parses the structured response.
+ * The prompt is currency-agnostic — the model detects the currency.
+ */
 @Singleton
-class GeminiRemoteDataSource @Inject constructor(
+class ReceiptExtractor @Inject constructor(
     private val apiKeyManager: ApiKeyManager,
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
@@ -35,7 +38,7 @@ class GeminiRemoteDataSource @Inject constructor(
         )
     }
 
-    suspend fun extractReceipt(bitmap: Bitmap): GeminiReceiptResponse {
+    suspend fun extract(bitmap: Bitmap): GeminiReceiptResponse {
         val model = createModel()
         val prompt = buildPrompt()
         val inputContent = content {
@@ -62,15 +65,15 @@ Extract the receipt details and return ONLY valid JSON following this schema:
   "merchant_name": "string",
   "transaction_date": "YYYY-MM-DD",
   "transaction_date_raw": "string (raw date text as seen on the receipt)",
-  "currency": "VND",
-  "total_amount_vnd": integer (exact VND, no decimals),
+  "currency": "ISO 4217 3-letter code (e.g. VND, USD, EUR, JPY)",
+  "total_amount": integer (final payable amount in the smallest unit of the currency — e.g. cents for USD, đồng for VND),
   "total_amount_raw": "string (raw text from receipt)",
   "category": "one of: Groceries, Dining, Shopping, Transport, Utilities, Health, Entertainment, Education, Other",
   "line_items": [
     {
       "description": "string",
       "qty": integer,
-      "amount_vnd": integer (exact VND, no decimals),
+      "amount": integer (in the smallest unit of the currency),
       "amount_raw": "string"
     }
   ],
@@ -80,10 +83,12 @@ Extract the receipt details and return ONLY valid JSON following this schema:
 Rules:
 1) Output only JSON. No markdown, no extra text.
 2) If unsure, use empty string or 0, and explain briefly in notes.
-3) Normalize amounts into VND integers (no decimals).
-4) Preserve the raw amount text exactly as printed.
-5) If quantity is missing, use 1.
-6) For transaction_date, make a best guess in YYYY-MM-DD, and always include the exact transaction_date_raw string.
-7) Category must be exactly one of: Groceries, Dining, Shopping, Transport, Utilities, Health, Entertainment, Education, Other.
+3) Detect the currency from the receipt and report it as an ISO 4217 code.
+4) Express ALL amounts as integers in the currency's smallest unit (e.g. cents for USD, đồng for VND). No decimals.
+5) total_amount must be the FINAL payable amount (after tax, discounts, service charge, etc.).
+6) Preserve the raw amount text exactly as printed.
+7) If quantity is missing, use 1.
+8) For transaction_date, make a best guess in YYYY-MM-DD, and always include the exact transaction_date_raw string.
+9) Category must be exactly one of: Groceries, Dining, Shopping, Transport, Utilities, Health, Entertainment, Education, Other.
     """.trimIndent()
 }

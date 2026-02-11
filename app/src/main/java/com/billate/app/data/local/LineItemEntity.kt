@@ -9,19 +9,20 @@ import androidx.room.PrimaryKey
     tableName = "line_items",
     foreignKeys = [
         ForeignKey(
-            entity = BillTransactionEntity::class,
+            entity = TransactionEntity::class,
             parentColumns = ["id"],
-            childColumns = ["billId"],
+            childColumns = ["transactionId"],
             onDelete = ForeignKey.CASCADE,
         ),
     ],
-    indices = [Index("billId")],
+    indices = [Index("transactionId")],
 )
 data class LineItemEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val billId: Long,
+    val transactionId: Long,
     val description: String,
     val qty: Int,
-    val amountVnd: Long,
+    val amountMinor: Long,
+    val currency: String,
     val amountRaw: String,
 )

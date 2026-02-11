@@ -1,4 +1,4 @@
-package com.billate.app.model
+package com.billate.app.core.model
 
 enum class Category(val displayName: String) {
     Groceries("Groceries"),

@@ -1,8 +1,5 @@
 # Development Notes (Billate)
 
-## 0) Can Icon.png be removed?
-Yes. The launcher icon is now generated in the mipmap folders, so Icon.png in the repo root is no longer used and can be deleted.
-
 ## 1) Saved bill data (tax, discounts, totals)
 **Current gap**: The current `BillTransaction` structure assumes a single total and line items without explicit tax/discount breakdown. This causes ambiguity when receipts include subtotal, discount, service charge, VAT, or multiple totals.
 

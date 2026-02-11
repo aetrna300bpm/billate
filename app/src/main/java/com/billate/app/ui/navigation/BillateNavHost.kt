@@ -21,15 +21,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.billate.app.model.BillTransaction
-import com.billate.app.ui.screens.BillReviewScreen
+import com.billate.app.core.model.Transaction
 import com.billate.app.ui.screens.HomeScreen
 import com.billate.app.ui.screens.SettingsScreen
+import com.billate.app.ui.screens.TransactionDetailScreen
 
 @Composable
 fun BillateNavHost() {
     val navController = rememberNavController()
-    var billToReview by remember { mutableStateOf<BillTransaction?>(null) }
+    var transactionToReview by remember { mutableStateOf<Transaction?>(null) }
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
@@ -75,12 +75,12 @@ fun BillateNavHost() {
         ) {
             composable("home") {
                 HomeScreen(
-                    onNavigateToReview = { bill ->
-                        billToReview = bill
+                    onNavigateToReview = { transaction ->
+                        transactionToReview = transaction
                         navController.navigate("review")
                     },
-                    onNavigateToEdit = { billId ->
-                        navController.navigate("edit/$billId")
+                    onNavigateToEdit = { transactionId ->
+                        navController.navigate("edit/$transactionId")
                     },
                 )
             }
@@ -88,11 +88,11 @@ fun BillateNavHost() {
                 SettingsScreen()
             }
             composable("review") {
-                val bill = billToReview
-                if (bill != null) {
-                    BillReviewScreen(
-                        initialBill = bill,
-                        billId = null,
+                val tx = transactionToReview
+                if (tx != null) {
+                    TransactionDetailScreen(
+                        initialTransaction = tx,
+                        transactionId = null,
                         onSaved = {
                             navController.popBackStack()
                         },
@@ -103,13 +103,13 @@ fun BillateNavHost() {
                 }
             }
             composable(
-                route = "edit/{billId}",
-                arguments = listOf(navArgument("billId") { type = NavType.LongType }),
+                route = "edit/{transactionId}",
+                arguments = listOf(navArgument("transactionId") { type = NavType.LongType }),
             ) { backStackEntry ->
-                val billId = backStackEntry.arguments?.getLong("billId") ?: return@composable
-                BillReviewScreen(
-                    initialBill = null,
-                    billId = billId,
+                val txId = backStackEntry.arguments?.getLong("transactionId") ?: return@composable
+                TransactionDetailScreen(
+                    initialTransaction = null,
+                    transactionId = txId,
                     onSaved = {
                         navController.popBackStack()
                     },

@@ -3,11 +3,11 @@ package com.billate.app.viewmodel
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.billate.app.data.BillRepository
+import com.billate.app.core.model.Transaction
 import com.billate.app.data.local.ApiKeyManager
-import com.billate.app.domain.ProcessBillUseCase
-import com.billate.app.model.BillProcessingOutcome
-import com.billate.app.model.BillTransaction
+import com.billate.app.data.repository.TransactionRepository
+import com.billate.app.domain.usecase.ProcessReceiptUseCase
+import com.billate.app.domain.usecase.ReceiptProcessingResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -20,19 +20,19 @@ import javax.inject.Inject
 sealed class HomeUiState {
     data object Initial : HomeUiState()
     data object Processing : HomeUiState()
-    data class AutoSaved(val bill: BillTransaction) : HomeUiState()
-    data class ReviewNeeded(val bill: BillTransaction, val reason: String) : HomeUiState()
+    data class AutoSaved(val transaction: Transaction) : HomeUiState()
+    data class ReviewNeeded(val transaction: Transaction, val reason: String) : HomeUiState()
     data class Error(val message: String) : HomeUiState()
 }
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    repository: BillRepository,
-    private val processBill: ProcessBillUseCase,
+    repository: TransactionRepository,
+    private val processReceipt: ProcessReceiptUseCase,
     private val apiKeyManager: ApiKeyManager,
 ) : ViewModel() {
 
-    val bills: StateFlow<List<BillTransaction>> = repository.getBills()
+    val transactions: StateFlow<List<Transaction>> = repository.getAll()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     private val _uiState = MutableStateFlow<HomeUiState>(HomeUiState.Initial)
@@ -43,14 +43,14 @@ class HomeViewModel @Inject constructor(
     fun onImageSelected(uri: Uri) {
         _uiState.value = HomeUiState.Processing
         viewModelScope.launch {
-            when (val result = processBill(uri)) {
-                is BillProcessingOutcome.AutoSaved -> {
-                    _uiState.value = HomeUiState.AutoSaved(result.bill)
+            when (val result = processReceipt(uri)) {
+                is ReceiptProcessingResult.AutoSaved -> {
+                    _uiState.value = HomeUiState.AutoSaved(result.transaction)
                 }
-                is BillProcessingOutcome.RequiresReview -> {
-                    _uiState.value = HomeUiState.ReviewNeeded(result.bill, result.reason)
+                is ReceiptProcessingResult.ReviewNeeded -> {
+                    _uiState.value = HomeUiState.ReviewNeeded(result.transaction, result.reason)
                 }
-                is BillProcessingOutcome.Failed -> {
+                is ReceiptProcessingResult.Failed -> {
                     _uiState.value = HomeUiState.Error(result.message)
                 }
             }

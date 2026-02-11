@@ -47,7 +47,7 @@ class SettingsViewModel @Inject constructor(
 
     companion object {
         val modelOptions = listOf(
-            "gemini-3-flash",
+            "gemini-3.0-flash",
             "gemini-2.5-flash",
             "gemini-2.5-flash-lite",
         )

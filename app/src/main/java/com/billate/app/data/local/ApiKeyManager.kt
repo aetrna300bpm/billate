@@ -33,6 +33,6 @@ class ApiKeyManager @Inject constructor(
     companion object {
         private const val KEY_API_KEY = "gemini_api_key"
         private const val KEY_MODEL_NAME = "gemini_model_name"
-        const val DEFAULT_MODEL = "gemini-3-flash"
+        const val DEFAULT_MODEL = "gemini-3.0-flash"
     }
 }

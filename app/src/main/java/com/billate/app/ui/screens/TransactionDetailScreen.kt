@@ -48,40 +48,41 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.billate.app.model.BillTransaction
-import com.billate.app.model.Category
-import com.billate.app.model.LineItem
-import com.billate.app.viewmodel.BillReviewViewModel
-import com.billate.app.viewmodel.ReviewUiState
+import com.billate.app.core.currency.MoneyFormatter
+import com.billate.app.core.model.Category
+import com.billate.app.core.model.LineItem
+import com.billate.app.core.model.Transaction
+import com.billate.app.viewmodel.TransactionDetailUiState
+import com.billate.app.viewmodel.TransactionDetailViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BillReviewScreen(
-    initialBill: BillTransaction?,
-    billId: Long?,
+fun TransactionDetailScreen(
+    initialTransaction: Transaction?,
+    transactionId: Long?,
     onSaved: () -> Unit,
     onBack: () -> Unit,
-    viewModel: BillReviewViewModel = hiltViewModel(),
+    viewModel: TransactionDetailViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
-        if (initialBill != null) {
-            viewModel.loadBill(initialBill)
-        } else if (billId != null) {
-            viewModel.loadBillById(billId)
+        if (initialTransaction != null) {
+            viewModel.loadTransaction(initialTransaction)
+        } else if (transactionId != null) {
+            viewModel.loadTransactionById(transactionId)
         }
     }
 
     LaunchedEffect(uiState) {
         when (uiState) {
-            is ReviewUiState.Saved -> {
-                Toast.makeText(context, "Bill saved!", Toast.LENGTH_SHORT).show()
+            is TransactionDetailUiState.Saved -> {
+                Toast.makeText(context, "Transaction saved!", Toast.LENGTH_SHORT).show()
                 onSaved()
             }
-            is ReviewUiState.Error -> {
-                Toast.makeText(context, (uiState as ReviewUiState.Error).message, Toast.LENGTH_LONG).show()
+            is TransactionDetailUiState.Error -> {
+                Toast.makeText(context, (uiState as TransactionDetailUiState.Error).message, Toast.LENGTH_LONG).show()
             }
             else -> {}
         }
@@ -89,9 +90,9 @@ fun BillReviewScreen(
 
     Scaffold(
         topBar = {
-            val isEditing = (uiState as? ReviewUiState.Editing)?.isExisting == true
+            val isEditing = (uiState as? TransactionDetailUiState.Editing)?.isExisting == true
             TopAppBar(
-                title = { Text(if (isEditing) "Edit Bill" else "Review Bill") },
+                title = { Text(if (isEditing) "Edit Transaction" else "Review Transaction") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -105,21 +106,21 @@ fun BillReviewScreen(
         },
     ) { padding ->
         when (val state = uiState) {
-            is ReviewUiState.Editing -> {
-                ReviewContent(
-                    bill = state.bill,
+            is TransactionDetailUiState.Editing -> {
+                TransactionDetailContent(
+                    transaction = state.transaction,
                     onMerchantChange = viewModel::updateMerchant,
-                    onDateChange = viewModel::updateDate,
+                    onNoteChange = viewModel::updateNote,
                     onTotalChange = { viewModel.updateTotal(it) },
                     onCategoryChange = viewModel::updateCategory,
                     onLineItemChange = viewModel::updateLineItem,
                     onAddLineItem = viewModel::addLineItem,
                     onRemoveLineItem = viewModel::removeLineItem,
-                    onSave = viewModel::saveBill,
+                    onSave = viewModel::save,
                     modifier = Modifier.padding(padding),
                 )
             }
-            is ReviewUiState.Saving -> {
+            is TransactionDetailUiState.Saving -> {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -141,10 +142,10 @@ fun BillReviewScreen(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ReviewContent(
-    bill: BillTransaction,
+private fun TransactionDetailContent(
+    transaction: Transaction,
     onMerchantChange: (String) -> Unit,
-    onDateChange: (String) -> Unit,
+    onNoteChange: (String) -> Unit,
     onTotalChange: (Long) -> Unit,
     onCategoryChange: (Category) -> Unit,
     onLineItemChange: (Int, LineItem) -> Unit,
@@ -153,56 +154,45 @@ private fun ReviewContent(
     onSave: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val currencyCode = transaction.amount.currency
+
     LazyColumn(
         modifier = modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        // Merchant
+        // Note (for all transactions)
         item {
             OutlinedTextField(
-                value = bill.merchantName,
-                onValueChange = onMerchantChange,
-                label = { Text("Merchant Name") },
+                value = transaction.note,
+                onValueChange = onNoteChange,
+                label = { Text("Note") },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
             )
         }
 
-        // Date
+        // Total amount
         item {
             OutlinedTextField(
-                value = bill.transactionDate,
-                onValueChange = onDateChange,
-                label = { Text("Date (YYYY-MM-DD)") },
-                modifier = Modifier.fillMaxWidth(),
-                singleLine = true,
-            )
-            if (bill.transactionDateRaw.isNotBlank() && bill.transactionDateRaw != bill.transactionDate) {
-                Text(
-                    text = "Raw: ${bill.transactionDateRaw}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(start = 4.dp, top = 2.dp),
-                )
-            }
-        }
-
-        // Total
-        item {
-            OutlinedTextField(
-                value = bill.totalAmountVnd.toString(),
+                value = transaction.amount.amountMinor.toString(),
                 onValueChange = { text ->
                     text.toLongOrNull()?.let { onTotalChange(it) }
                 },
-                label = { Text("Total (VND)") },
+                label = { Text("Total (minor units, $currencyCode)") },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             )
-            if (bill.totalAmountRaw.isNotBlank()) {
+            Text(
+                text = "Display: ${MoneyFormatter.format(transaction.amount)}",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(start = 4.dp, top = 2.dp),
+            )
+            if (transaction.bill?.totalAmountRaw?.isNotBlank() == true) {
                 Text(
-                    text = "Raw: ${bill.totalAmountRaw}",
+                    text = "Raw from receipt: ${transaction.bill.totalAmountRaw}",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(start = 4.dp, top = 2.dp),
@@ -218,7 +208,7 @@ private fun ReviewContent(
                 onExpandedChange = { expanded = !expanded },
             ) {
                 OutlinedTextField(
-                    value = bill.category.displayName,
+                    value = transaction.category.displayName,
                     onValueChange = {},
                     readOnly = true,
                     label = { Text("Category") },
@@ -244,44 +234,73 @@ private fun ReviewContent(
             }
         }
 
-        // Line items header
-        item {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Text("Line Items", style = MaterialTheme.typography.titleMedium)
-                TextButton(onClick = onAddLineItem) {
-                    Icon(Icons.Default.Add, contentDescription = null)
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("Add")
+        // Bill section (only if bill is present, i.e., scanned receipt)
+        if (transaction.bill != null) {
+            // Merchant
+            item {
+                OutlinedTextField(
+                    value = transaction.bill.merchantName,
+                    onValueChange = onMerchantChange,
+                    label = { Text("Merchant Name") },
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                )
+            }
+
+            // Receipt date raw
+            if (transaction.bill.transactionDateRaw.isNotBlank()) {
+                item {
+                    OutlinedTextField(
+                        value = transaction.bill.transactionDateRaw,
+                        onValueChange = {},
+                        readOnly = true,
+                        label = { Text("Date from receipt") },
+                        modifier = Modifier.fillMaxWidth(),
+                        singleLine = true,
+                    )
                 }
             }
-        }
 
-        // Line items
-        itemsIndexed(bill.lineItems) { index, item ->
-            LineItemCard(
-                item = item,
-                index = index,
-                onUpdate = { updated -> onLineItemChange(index, updated) },
-                onRemove = { onRemoveLineItem(index) },
-            )
-        }
-
-        // Notes
-        item {
-            if (bill.notes.isNotBlank()) {
-                Card(
+            // Line items header
+            item {
+                Row(
                     modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
-                    ),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Column(modifier = Modifier.padding(12.dp)) {
-                        Text("Notes", style = MaterialTheme.typography.labelMedium)
-                        Text(bill.notes, style = MaterialTheme.typography.bodySmall)
+                    Text("Line Items", style = MaterialTheme.typography.titleMedium)
+                    TextButton(onClick = onAddLineItem) {
+                        Icon(Icons.Default.Add, contentDescription = null)
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text("Add")
+                    }
+                }
+            }
+
+            // Line items
+            itemsIndexed(transaction.bill.lineItems) { index, item ->
+                DetailLineItemCard(
+                    item = item,
+                    index = index,
+                    currencyCode = currencyCode,
+                    onUpdate = { updated -> onLineItemChange(index, updated) },
+                    onRemove = { onRemoveLineItem(index) },
+                )
+            }
+
+            // Notes from receipt
+            if (transaction.bill.notes.isNotBlank()) {
+                item {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                        ),
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Text("Receipt Notes", style = MaterialTheme.typography.labelMedium)
+                            Text(transaction.bill.notes, style = MaterialTheme.typography.bodySmall)
+                        }
                     }
                 }
             }
@@ -294,7 +313,7 @@ private fun ReviewContent(
                 onClick = onSave,
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                Text("Save Bill")
+                Text("Save")
             }
             Spacer(modifier = Modifier.height(32.dp))
         }
@@ -302,9 +321,10 @@ private fun ReviewContent(
 }
 
 @Composable
-private fun LineItemCard(
+private fun DetailLineItemCard(
     item: LineItem,
     index: Int,
+    currencyCode: String,
     onUpdate: (LineItem) -> Unit,
     onRemove: () -> Unit,
     modifier: Modifier = Modifier,
@@ -348,11 +368,11 @@ private fun LineItemCard(
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 )
                 OutlinedTextField(
-                    value = item.amountVnd.toString(),
+                    value = item.amount.amountMinor.toString(),
                     onValueChange = { text ->
-                        text.toLongOrNull()?.let { onUpdate(item.copy(amountVnd = it)) }
+                        text.toLongOrNull()?.let { onUpdate(item.copy(amount = item.amount.copy(amountMinor = it))) }
                     },
-                    label = { Text("Amount (VND)") },
+                    label = { Text("Amount ($currencyCode)") },
                     modifier = Modifier.weight(2f),
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
