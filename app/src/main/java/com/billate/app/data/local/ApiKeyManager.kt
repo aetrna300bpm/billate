@@ -21,9 +21,18 @@ class ApiKeyManager @Inject constructor(
         prefs.edit { putString(KEY_API_KEY, key.trim()) }
     }
 
+    fun getModelName(): String =
+        prefs.getString(KEY_MODEL_NAME, DEFAULT_MODEL) ?: DEFAULT_MODEL
+
+    fun saveModelName(name: String) {
+        prefs.edit { putString(KEY_MODEL_NAME, name.trim()) }
+    }
+
     fun hasApiKey(): Boolean = getApiKey().isNotBlank()
 
     companion object {
         private const val KEY_API_KEY = "gemini_api_key"
+        private const val KEY_MODEL_NAME = "gemini_model_name"
+        const val DEFAULT_MODEL = "gemini-3-flash"
     }
 }

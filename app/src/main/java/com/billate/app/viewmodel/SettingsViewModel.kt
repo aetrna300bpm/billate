@@ -10,6 +10,7 @@ import javax.inject.Inject
 
 data class SettingsUiState(
     val apiKey: String = "",
+    val modelName: String = ApiKeyManager.DEFAULT_MODEL,
     val saved: Boolean = false,
 )
 
@@ -22,7 +23,10 @@ class SettingsViewModel @Inject constructor(
     val uiState: StateFlow<SettingsUiState> = _uiState.asStateFlow()
 
     init {
-        _uiState.value = SettingsUiState(apiKey = apiKeyManager.getApiKey())
+        _uiState.value = SettingsUiState(
+            apiKey = apiKeyManager.getApiKey(),
+            modelName = apiKeyManager.getModelName(),
+        )
     }
 
     fun onApiKeyChange(key: String) {
@@ -34,5 +38,23 @@ class SettingsViewModel @Inject constructor(
         _uiState.value = _uiState.value.copy(saved = true)
     }
 
+    fun onModelChange(name: String) {
+        apiKeyManager.saveModelName(name)
+        _uiState.value = _uiState.value.copy(modelName = name)
+    }
+
     fun hasApiKey(): Boolean = apiKeyManager.hasApiKey()
+
+    companion object {
+        val modelOptions = listOf(
+            "gemini-3-flash",
+            "gemini-2.5-flash",
+            "gemini-2.5-flash-lite",
+            "gemma-3-12b",
+            "gemma-3-4b",
+            "gemma-3-1b",
+            "gemma-3-27b",
+            "gemma-3-2b",
+        )
+    }
 }

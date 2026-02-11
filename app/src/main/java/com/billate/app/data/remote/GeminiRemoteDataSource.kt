@@ -19,8 +19,9 @@ class GeminiRemoteDataSource @Inject constructor(
     private fun createModel(): GenerativeModel {
         val apiKey = apiKeyManager.getApiKey()
         require(apiKey.isNotBlank()) { "API key not set. Please add your Gemini API key in Settings." }
+        val modelName = apiKeyManager.getModelName()
         return GenerativeModel(
-            modelName = "gemini-2.0-flash",
+            modelName = modelName,
             apiKey = apiKey,
             generationConfig = generationConfig {
                 temperature = 0.2f
