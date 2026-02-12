@@ -95,20 +95,33 @@ class ProcessReceiptUseCase @Inject constructor(
             )
         }
 
+        // Only populate adjustments when the receipt explicitly listed them
+        val adj = response.adjustments
+        val serviceCharge = adj?.serviceCharge?.takeIf { it.amount != 0L }
+            ?.let { Money(it.amount, currency) }
+        val discount = adj?.discount?.takeIf { it.amount != 0L }
+            ?.let { Money(it.amount, currency) }
+        val tax = adj?.tax?.takeIf { it.amount != 0L }
+            ?.let { Money(it.amount, currency) }
+
         val bill = Bill(
             merchantName = response.merchantName,
             transactionDateRaw = response.transactionDateRaw,
             totalAmountRaw = response.totalAmountRaw,
             lineItems = lineItems,
+            serviceCharge = serviceCharge,
+            discount = discount,
+            tax = tax,
             notes = response.notes,
             imageUri = imageFilename,
+            extractionConfidence = response.confidence,
         )
 
         val timestamp = parseDate(response.transactionDate)
 
         return Transaction(
             timestamp = timestamp,
-            amount = Money(response.totalAmount, currency),
+            amount = Money(response.finalTotal, currency),
             category = Category.fromString(response.category) ?: Category.Other,
             bill = bill,
         )
@@ -126,6 +139,8 @@ class ProcessReceiptUseCase @Inject constructor(
     private fun validate(transaction: Transaction): String? {
         if (transaction.bill?.merchantName.isNullOrBlank()) return "Merchant name is missing"
         if (transaction.amount.amountMinor <= 0) return "Total amount must be positive"
+        val confidence = transaction.bill?.extractionConfidence ?: 1.0f
+        if (confidence < 0.3f) return "Receipt unclear (${(confidence * 100).toInt()}% confident). Please verify."
         return null
     }
 }

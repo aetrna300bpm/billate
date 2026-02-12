@@ -30,9 +30,18 @@ class ApiKeyManager @Inject constructor(
 
     fun hasApiKey(): Boolean = getApiKey().isNotBlank()
 
+    fun getDefaultCurrency(): String =
+        prefs.getString(KEY_DEFAULT_CURRENCY, DEFAULT_CURRENCY) ?: DEFAULT_CURRENCY
+
+    fun setDefaultCurrency(code: String) {
+        prefs.edit { putString(KEY_DEFAULT_CURRENCY, code.trim().uppercase()) }
+    }
+
     companion object {
         private const val KEY_API_KEY = "gemini_api_key"
         private const val KEY_MODEL_NAME = "gemini_model_name"
-        const val DEFAULT_MODEL = "gemini-3.0-flash"
+        private const val KEY_DEFAULT_CURRENCY = "default_currency"
+        const val DEFAULT_MODEL = "gemini-3-flash-preview"
+        const val DEFAULT_CURRENCY = "VND"
     }
 }

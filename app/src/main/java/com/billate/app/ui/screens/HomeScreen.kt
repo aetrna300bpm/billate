@@ -24,6 +24,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.Receipt
 import androidx.compose.material3.AlertDialog
@@ -66,6 +67,7 @@ import java.util.Locale
 fun HomeScreen(
     onNavigateToReview: (Transaction) -> Unit,
     onNavigateToEdit: (Long) -> Unit,
+    onNavigateToCreate: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val transactions by viewModel.transactions.collectAsStateWithLifecycle()
@@ -161,10 +163,7 @@ fun HomeScreen(
 
         // FAB
         FloatingActionButton(
-            onClick = {
-                if (viewModel.hasApiKey()) showPickerDialog = true
-                else Toast.makeText(context, "Please add your API key in Settings first", Toast.LENGTH_LONG).show()
-            },
+            onClick = { showPickerDialog = true },
             containerColor = MaterialTheme.colorScheme.primary,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
@@ -185,6 +184,10 @@ fun HomeScreen(
                             .fillMaxWidth()
                             .clickable {
                                 showPickerDialog = false
+                                if (!viewModel.hasApiKey()) {
+                                    Toast.makeText(context, "Please add your API key in Settings first", Toast.LENGTH_LONG).show()
+                                    return@clickable
+                                }
                                 val hasPerm = ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
                                 if (hasPerm) {
                                     val file = createTempImageFile(context)
@@ -207,6 +210,10 @@ fun HomeScreen(
                             .fillMaxWidth()
                             .clickable {
                                 showPickerDialog = false
+                                if (!viewModel.hasApiKey()) {
+                                    Toast.makeText(context, "Please add your API key in Settings first", Toast.LENGTH_LONG).show()
+                                    return@clickable
+                                }
                                 galleryLauncher.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
                             }
                             .padding(vertical = 12.dp),
@@ -215,6 +222,20 @@ fun HomeScreen(
                         Icon(Icons.Default.PhotoLibrary, contentDescription = null)
                         Spacer(modifier = Modifier.width(16.dp))
                         Text("Choose from Gallery", style = MaterialTheme.typography.bodyLarge)
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                showPickerDialog = false
+                                onNavigateToCreate()
+                            }
+                            .padding(vertical = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Icon(Icons.Default.Edit, contentDescription = null)
+                        Spacer(modifier = Modifier.width(16.dp))
+                        Text("Add Manually", style = MaterialTheme.typography.bodyLarge)
                     }
                 }
             },
@@ -271,11 +292,22 @@ private fun TransactionCard(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
             ) {
-                Text(
-                    text = dateFormat.format(Date(transaction.timestamp)),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = dateFormat.format(Date(transaction.timestamp)),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                    if (transaction.bill != null) {
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Icon(
+                            Icons.Default.Receipt,
+                            contentDescription = "Scanned receipt",
+                            modifier = Modifier.size(14.dp),
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                }
                 Text(
                     text = transaction.category.displayName,
                     style = MaterialTheme.typography.labelMedium,

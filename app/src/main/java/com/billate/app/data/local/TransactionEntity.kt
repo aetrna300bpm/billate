@@ -17,5 +17,13 @@ data class TransactionEntity(
     val totalAmountRaw: String? = null,
     val billNotes: String? = null,
     val billImageUri: String? = null,
+    // Bill adjustments — only when explicitly listed on the receipt
+    val serviceChargeMinor: Long? = null,
+    val serviceChargeCurrency: String? = null,
+    val discountMinor: Long? = null,
+    val discountCurrency: String? = null,
+    val taxMinor: Long? = null,
+    val taxCurrency: String? = null,
+    val extractionConfidence: Float = 1.0f,
     val createdAt: Long,
 )

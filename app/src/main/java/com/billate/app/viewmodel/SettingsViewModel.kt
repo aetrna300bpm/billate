@@ -11,6 +11,7 @@ import javax.inject.Inject
 data class SettingsUiState(
     val apiKey: String = "",
     val modelName: String = ApiKeyManager.DEFAULT_MODEL,
+    val defaultCurrency: String = ApiKeyManager.DEFAULT_CURRENCY,
     val saved: Boolean = false,
 )
 
@@ -26,6 +27,7 @@ class SettingsViewModel @Inject constructor(
         _uiState.value = SettingsUiState(
             apiKey = apiKeyManager.getApiKey(),
             modelName = apiKeyManager.getModelName(),
+            defaultCurrency = apiKeyManager.getDefaultCurrency(),
         )
     }
 
@@ -43,11 +45,16 @@ class SettingsViewModel @Inject constructor(
         _uiState.value = _uiState.value.copy(modelName = name)
     }
 
+    fun onDefaultCurrencyChange(code: String) {
+        apiKeyManager.setDefaultCurrency(code)
+        _uiState.value = _uiState.value.copy(defaultCurrency = code)
+    }
+
     fun hasApiKey(): Boolean = apiKeyManager.hasApiKey()
 
     companion object {
         val modelOptions = listOf(
-            "gemini-3.0-flash",
+            "gemini-3-flash-preview",
             "gemini-2.5-flash",
             "gemini-2.5-flash-lite",
         )

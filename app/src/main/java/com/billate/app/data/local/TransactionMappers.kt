@@ -22,8 +22,18 @@ object TransactionMappers {
                 transactionDateRaw = tx.transactionDateRaw ?: "",
                 totalAmountRaw = tx.totalAmountRaw ?: "",
                 lineItems = lineItems.map { it.toDomain(currency) },
+                serviceCharge = tx.serviceChargeMinor?.let {
+                    Money(it, tx.serviceChargeCurrency ?: currency)
+                },
+                discount = tx.discountMinor?.let {
+                    Money(it, tx.discountCurrency ?: currency)
+                },
+                tax = tx.taxMinor?.let {
+                    Money(it, tx.taxCurrency ?: currency)
+                },
                 notes = tx.billNotes ?: "",
                 imageUri = tx.billImageUri,
+                extractionConfidence = tx.extractionConfidence,
             )
         } else {
             null
@@ -60,6 +70,13 @@ object TransactionMappers {
         totalAmountRaw = bill?.totalAmountRaw,
         billNotes = bill?.notes,
         billImageUri = bill?.imageUri,
+        serviceChargeMinor = bill?.serviceCharge?.amountMinor,
+        serviceChargeCurrency = bill?.serviceCharge?.currency,
+        discountMinor = bill?.discount?.amountMinor,
+        discountCurrency = bill?.discount?.currency,
+        taxMinor = bill?.tax?.amountMinor,
+        taxCurrency = bill?.tax?.currency,
+        extractionConfidence = bill?.extractionConfidence ?: 1.0f,
         createdAt = createdAt,
     )
 

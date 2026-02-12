@@ -21,6 +21,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.billate.app.core.model.Bill
+import com.billate.app.core.model.Category
+import com.billate.app.core.model.Money
 import com.billate.app.core.model.Transaction
 import com.billate.app.ui.screens.HomeScreen
 import com.billate.app.ui.screens.SettingsScreen
@@ -82,6 +85,9 @@ fun BillateNavHost() {
                     onNavigateToEdit = { transactionId ->
                         navController.navigate("edit/$transactionId")
                     },
+                    onNavigateToCreate = {
+                        navController.navigate("create")
+                    },
                 )
             }
             composable("settings") {
@@ -101,6 +107,31 @@ fun BillateNavHost() {
                         },
                     )
                 }
+            }
+            composable("create") {
+                // Manual transaction entry — blank Transaction with default currency
+                val blankTransaction = Transaction(
+                    timestamp = System.currentTimeMillis(),
+                    amount = Money(0L, "VND"),
+                    category = Category.Other,
+                    bill = Bill(
+                        merchantName = "",
+                        lineItems = emptyList(),
+                        totalAmountRaw = "",
+                        transactionDateRaw = "",
+                        notes = "",
+                    ),
+                )
+                TransactionDetailScreen(
+                    initialTransaction = blankTransaction,
+                    transactionId = null,
+                    onSaved = {
+                        navController.popBackStack()
+                    },
+                    onBack = {
+                        navController.popBackStack()
+                    },
+                )
             }
             composable(
                 route = "edit/{transactionId}",
