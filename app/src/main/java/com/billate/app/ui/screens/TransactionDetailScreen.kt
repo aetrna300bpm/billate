@@ -143,7 +143,7 @@ fun TransactionDetailScreen(
                     isExisting = state.isExisting,
                     lineItemEditMode = viewModel.lineItemEditMode,
                     onLineItemEditModeChange = { viewModel.lineItemEditMode = it },
-                    onMerchantChange = viewModel::updateMerchant,
+                    onMerchantChange = viewModel::updateName,
                     onNoteChange = viewModel::updateNote,
                     onTotalChange = { viewModel.updateTotal(it) },
                     onCategoryChange = viewModel::updateCategory,
@@ -213,9 +213,14 @@ private fun TransactionDetailContent(
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         // ── Confidence indicator ──
-        if (transaction.bill != null && transaction.bill.extractionConfidence < 1.0f) {
+        val extractionConfidence = when (transaction) {
+            is Transaction.Receipt -> transaction.extractionConfidence
+            is Transaction.WireTransfer -> transaction.extractionConfidence
+            is Transaction.Manual -> 1.0f
+        }
+        if (extractionConfidence < 1.0f) {
             item {
-                val pct = (transaction.bill.extractionConfidence * 100).toInt()
+                val pct = (extractionConfidence * 100).toInt()
                 val color = if (pct < 50) MaterialTheme.colorScheme.error
                     else MaterialTheme.colorScheme.tertiary
                 Card(
@@ -232,29 +237,48 @@ private fun TransactionDetailContent(
             }
         }
 
-        // ── Receipt image thumbnail ──
-        if (transaction.bill?.imageUri != null) {
+        // ── Receipt/WireTransfer image thumbnail ──
+        val imageUri = when (transaction) {
+            is Transaction.Receipt -> transaction.imageUri
+            is Transaction.WireTransfer -> transaction.imageUri
+            is Transaction.Manual -> null
+        }
+        if (imageUri != null) {
             item {
                 val receiptsDir = remember {
                     File(context.filesDir, "receipts").also { it.mkdirs() }
                 }
-                val imageFile = remember(transaction.bill.imageUri) {
-                    File(receiptsDir, transaction.bill.imageUri)
+                val imageFile = remember(imageUri) {
+                    File(receiptsDir, imageUri)
                 }
                 if (imageFile.exists()) {
+                    var showFullScreen by remember { mutableStateOf(false) }
                     Card(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { showFullScreen = true },
                         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
                     ) {
                         Image(
                             painter = rememberAsyncImagePainter(model = imageFile),
-                            contentDescription = "Receipt image",
+                            contentDescription = "Receipt image — tap to enlarge",
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(200.dp)
                                 .clip(RoundedCornerShape(8.dp)),
                             contentScale = ContentScale.Crop,
                         )
+                    }
+                    if (showFullScreen) {
+                        androidx.compose.ui.window.Dialog(
+                            onDismissRequest = { showFullScreen = false },
+                            properties = androidx.compose.ui.window.DialogProperties(usePlatformDefaultWidth = false),
+                        ) {
+                            com.billate.app.ui.components.FullScreenImageViewer(
+                                imageFile = imageFile,
+                                onDismiss = { showFullScreen = false },
+                            )
+                        }
                     }
                 }
             }
@@ -304,9 +328,9 @@ private fun TransactionDetailContent(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(start = 4.dp, top = 2.dp),
             )
-            if (transaction.bill?.totalAmountRaw?.isNotBlank() == true) {
+            if (transaction is Transaction.Receipt && transaction.totalAmountRaw.isNotBlank()) {
                 Text(
-                    text = "Raw from receipt: ${transaction.bill.totalAmountRaw}",
+                    text = "Raw from receipt: ${transaction.totalAmountRaw}",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(start = 4.dp, top = 2.dp),
@@ -348,14 +372,27 @@ private fun TransactionDetailContent(
             }
         }
 
+        // ── Name field (for Manual & WireTransfer) ──
+        if (transaction !is Transaction.Receipt) {
+            item {
+                OutlinedTextField(
+                    value = transaction.name,
+                    onValueChange = onMerchantChange,
+                    label = { Text("Name") },
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                )
+            }
+        }
+
         // ══════════════════════════════════════════════
-        // BILL SECTION — only when bill is present
+        // RECEIPT SECTION — only for Receipt type
         // ══════════════════════════════════════════════
-        if (transaction.bill != null) {
+        if (transaction is Transaction.Receipt) {
             // ── Merchant ──
             item {
                 OutlinedTextField(
-                    value = transaction.bill.merchantName,
+                    value = transaction.name,
                     onValueChange = onMerchantChange,
                     label = { Text("Merchant Name") },
                     modifier = Modifier.fillMaxWidth(),
@@ -364,10 +401,10 @@ private fun TransactionDetailContent(
             }
 
             // ── Receipt date raw ──
-            if (transaction.bill.transactionDateRaw.isNotBlank()) {
+            if (transaction.transactionDateRaw.isNotBlank()) {
                 item {
                     OutlinedTextField(
-                        value = transaction.bill.transactionDateRaw,
+                        value = transaction.transactionDateRaw,
                         onValueChange = {},
                         readOnly = true,
                         label = { Text("Date from receipt") },
@@ -415,7 +452,7 @@ private fun TransactionDetailContent(
             }
 
             // ── Line items ──
-            itemsIndexed(transaction.bill.lineItems) { index, item ->
+            itemsIndexed(transaction.lineItems) { index, item ->
                 DetailLineItemCard(
                     item = item,
                     index = index,
@@ -426,9 +463,9 @@ private fun TransactionDetailContent(
             }
 
             // ── Adjustments section ──
-            if (transaction.bill.serviceCharge != null ||
-                transaction.bill.discount != null ||
-                transaction.bill.tax != null
+            if (transaction.serviceCharge != null ||
+                transaction.discount != null ||
+                transaction.tax != null
             ) {
                 item {
                     Text("Adjustments", style = MaterialTheme.typography.titleMedium)
@@ -436,11 +473,11 @@ private fun TransactionDetailContent(
             }
 
             // Service charge
-            if (transaction.bill.serviceCharge != null) {
+            if (transaction.serviceCharge != null) {
                 item {
                     AdjustmentField(
                         label = "Service Charge",
-                        amountMinor = transaction.bill.serviceCharge.amountMinor,
+                        amountMinor = transaction.serviceCharge.amountMinor,
                         currencyCode = currencyCode,
                         onChange = onServiceChargeChange,
                     )
@@ -448,11 +485,11 @@ private fun TransactionDetailContent(
             }
 
             // Discount (negative)
-            if (transaction.bill.discount != null) {
+            if (transaction.discount != null) {
                 item {
                     AdjustmentField(
                         label = "Discount",
-                        amountMinor = transaction.bill.discount.amountMinor,
+                        amountMinor = transaction.discount.amountMinor,
                         currencyCode = currencyCode,
                         onChange = onDiscountChange,
                     )
@@ -460,11 +497,11 @@ private fun TransactionDetailContent(
             }
 
             // Tax
-            if (transaction.bill.tax != null) {
+            if (transaction.tax != null) {
                 item {
                     AdjustmentField(
                         label = "Tax",
-                        amountMinor = transaction.bill.tax.amountMinor,
+                        amountMinor = transaction.tax.amountMinor,
                         currencyCode = currencyCode,
                         onChange = onTaxChange,
                     )
@@ -472,7 +509,7 @@ private fun TransactionDetailContent(
             }
 
             // ── Notes from receipt ──
-            if (transaction.bill.notes.isNotBlank()) {
+            if (transaction.note.isNotBlank()) {
                 item {
                     Card(
                         modifier = Modifier.fillMaxWidth(),
@@ -482,9 +519,39 @@ private fun TransactionDetailContent(
                     ) {
                         Column(modifier = Modifier.padding(12.dp)) {
                             Text("Receipt Notes", style = MaterialTheme.typography.labelMedium)
-                            Text(transaction.bill.notes, style = MaterialTheme.typography.bodySmall)
+                            Text(transaction.note, style = MaterialTheme.typography.bodySmall)
                         }
                     }
+                }
+            }
+        }
+
+        // ══════════════════════════════════════════════
+        // WIRE TRANSFER SECTION — only for WireTransfer type
+        // ══════════════════════════════════════════════
+        if (transaction is Transaction.WireTransfer) {
+            // ── Original recipient (read-only) ──
+            if (transaction.recipientName.isNotBlank()) {
+                item {
+                    Text(
+                        text = "Recipient: ${transaction.recipientName}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(start = 4.dp, top = 4.dp),
+                    )
+                }
+            }
+
+            // ── Extraction confidence ──
+            if (transaction.extractionConfidence < 1.0f) {
+                item {
+                    val pct = (transaction.extractionConfidence * 100).toInt()
+                    Text(
+                        text = "Extraction confidence: $pct%",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(start = 4.dp),
+                    )
                 }
             }
         }

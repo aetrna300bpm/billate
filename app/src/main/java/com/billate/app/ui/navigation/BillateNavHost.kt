@@ -3,6 +3,7 @@ package com.billate.app.ui.navigation
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Insights
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -21,11 +22,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.billate.app.core.model.Bill
 import com.billate.app.core.model.Category
 import com.billate.app.core.model.Money
 import com.billate.app.core.model.Transaction
 import com.billate.app.ui.screens.HomeScreen
+import com.billate.app.ui.screens.InsightsScreen
 import com.billate.app.ui.screens.SettingsScreen
 import com.billate.app.ui.screens.TransactionDetailScreen
 
@@ -37,7 +38,7 @@ fun BillateNavHost() {
     val currentRoute = navBackStackEntry?.destination?.route
 
     // Show bottom bar only on top-level tabs
-    val showBottomBar = currentRoute in listOf("home", "settings")
+    val showBottomBar = currentRoute in listOf("home", "insights", "settings")
 
     Scaffold(
         bottomBar = {
@@ -51,6 +52,18 @@ fun BillateNavHost() {
                             if (currentRoute != "home") {
                                 navController.navigate("home") {
                                     popUpTo("home") { inclusive = true }
+                                }
+                            }
+                        },
+                    )
+                    NavigationBarItem(
+                        icon = { Icon(Icons.Default.Insights, contentDescription = "Insights") },
+                        label = { Text("Insights") },
+                        selected = currentRoute == "insights",
+                        onClick = {
+                            if (currentRoute != "insights") {
+                                navController.navigate("insights") {
+                                    popUpTo("home")
                                 }
                             }
                         },
@@ -93,6 +106,9 @@ fun BillateNavHost() {
             composable("settings") {
                 SettingsScreen()
             }
+            composable("insights") {
+                InsightsScreen()
+            }
             composable("review") {
                 val tx = transactionToReview
                 if (tx != null) {
@@ -110,17 +126,11 @@ fun BillateNavHost() {
             }
             composable("create") {
                 // Manual transaction entry — blank Transaction with default currency
-                val blankTransaction = Transaction(
+                val blankTransaction = Transaction.Manual(
                     timestamp = System.currentTimeMillis(),
                     amount = Money(0L, "VND"),
                     category = Category.Other,
-                    bill = Bill(
-                        merchantName = "",
-                        lineItems = emptyList(),
-                        totalAmountRaw = "",
-                        transactionDateRaw = "",
-                        notes = "",
-                    ),
+                    name = "",
                 )
                 TransactionDetailScreen(
                     initialTransaction = blankTransaction,

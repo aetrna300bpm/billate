@@ -4,7 +4,6 @@ import android.content.ContentResolver
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import com.billate.app.core.model.Bill
 import com.billate.app.core.model.Category
 import com.billate.app.core.model.LineItem
 import com.billate.app.core.model.Money
@@ -32,6 +31,10 @@ sealed class ReceiptProcessingResult {
 
 /**
  * End-to-end use case: image → Gemini extraction → save image → create Transaction.
+ *
+ * Gemini auto-detects whether the image is a receipt or a wire transfer.
+ * - Receipts follow the existing validate-then-save flow.
+ * - Wire transfers ALWAYS go to review mode so the user can set a category.
  */
 class ProcessReceiptUseCase @Inject constructor(
     private val receiptExtractor: ReceiptExtractor,
@@ -45,25 +48,39 @@ class ProcessReceiptUseCase @Inject constructor(
             val bitmap = readBitmap(imageUri)
                 ?: return ReceiptProcessingResult.Failed("Could not read image")
 
-            // 2. Extract receipt via Gemini
+            // 2. Extract via Gemini (auto-detects receipt vs wire transfer)
             val response = receiptExtractor.extract(bitmap)
 
             // 3. Save image to internal storage
-            val imageFilename = "receipt_${UUID.randomUUID()}.jpg"
+            val prefix = if (response.type == "wire_transfer") "transfer" else "receipt"
+            val imageFilename = "${prefix}_${UUID.randomUUID()}.jpg"
             contentResolver.openInputStream(imageUri)?.use { stream ->
                 imageStorage.saveImage(stream, imageFilename)
             }
 
-            // 4. Build domain Transaction
+            // 4. Build domain Transaction (receipt or wire transfer)
             val transaction = mapResponseToTransaction(response, imageFilename)
 
             // 5. Validate and save
-            val validationIssue = validate(transaction)
-            if (validationIssue == null) {
-                val id = repository.save(transaction)
-                ReceiptProcessingResult.AutoSaved(transaction.copy(id = id))
-            } else {
-                ReceiptProcessingResult.ReviewNeeded(transaction, validationIssue)
+            when (transaction) {
+                is Transaction.WireTransfer -> {
+                    // Wire transfers always go to review so user can pick a category
+                    ReceiptProcessingResult.ReviewNeeded(transaction, "Wire transfer detected — please verify details")
+                }
+                is Transaction.Receipt -> {
+                    val issue = validateReceipt(transaction)
+                    if (issue == null) {
+                        val id = repository.save(transaction)
+                        ReceiptProcessingResult.AutoSaved(transaction.copy(id = id))
+                    } else {
+                        ReceiptProcessingResult.ReviewNeeded(transaction, issue)
+                    }
+                }
+                is Transaction.Manual -> {
+                    // Should never happen from OCR, but handle gracefully
+                    val id = repository.save(transaction)
+                    ReceiptProcessingResult.AutoSaved(transaction.copy(id = id))
+                }
             }
         } catch (e: Exception) {
             ReceiptProcessingResult.Failed(e.message ?: "Unknown error during processing")
@@ -85,46 +102,62 @@ class ProcessReceiptUseCase @Inject constructor(
         imageFilename: String,
     ): Transaction {
         val currency = response.currency.ifBlank { "VND" }
-
-        val lineItems = response.lineItems.map { item ->
-            LineItem(
-                description = item.description,
-                qty = item.qty,
-                amount = Money(item.amount, currency),
-                amountRaw = item.amountRaw,
-            )
-        }
-
-        // Only populate adjustments when the receipt explicitly listed them
-        val adj = response.adjustments
-        val serviceCharge = adj?.serviceCharge?.takeIf { it.amount != 0L }
-            ?.let { Money(it.amount, currency) }
-        val discount = adj?.discount?.takeIf { it.amount != 0L }
-            ?.let { Money(it.amount, currency) }
-        val tax = adj?.tax?.takeIf { it.amount != 0L }
-            ?.let { Money(it.amount, currency) }
-
-        val bill = Bill(
-            merchantName = response.merchantName,
-            transactionDateRaw = response.transactionDateRaw,
-            totalAmountRaw = response.totalAmountRaw,
-            lineItems = lineItems,
-            serviceCharge = serviceCharge,
-            discount = discount,
-            tax = tax,
-            notes = response.notes,
-            imageUri = imageFilename,
-            extractionConfidence = response.confidence,
-        )
-
+        val amount = Money(response.finalTotal, currency)
         val timestamp = parseDate(response.transactionDate)
 
-        return Transaction(
-            timestamp = timestamp,
-            amount = Money(response.finalTotal, currency),
-            category = Category.fromString(response.category) ?: Category.Other,
-            bill = bill,
-        )
+        return when (response.type) {
+            "wire_transfer" -> {
+                val recipient = response.recipientName ?: response.merchantName
+                Transaction.WireTransfer(
+                    timestamp = timestamp,
+                    amount = amount,
+                    category = Category.Other,
+                    name = recipient,
+                    recipientName = recipient,
+                    note = buildString {
+                        response.recipientBank?.let { appendLine("Via: $it") }
+                        response.transactionReference?.let { appendLine("Ref: $it") }
+                        if (response.notes.isNotBlank()) append(response.notes)
+                    }.trim(),
+                    imageUri = imageFilename,
+                    extractionConfidence = response.confidence,
+                )
+            }
+            else -> {
+                val lineItems = response.lineItems.map { item ->
+                    LineItem(
+                        description = item.description,
+                        qty = item.qty,
+                        amount = Money(item.amount, currency),
+                        amountRaw = item.amountRaw,
+                    )
+                }
+                val adj = response.adjustments
+                val serviceCharge = adj?.serviceCharge?.takeIf { it.amount != 0L }
+                    ?.let { Money(it.amount, currency) }
+                val discount = adj?.discount?.takeIf { it.amount != 0L }
+                    ?.let { Money(it.amount, currency) }
+                val tax = adj?.tax?.takeIf { it.amount != 0L }
+                    ?.let { Money(it.amount, currency) }
+
+                Transaction.Receipt(
+                    timestamp = timestamp,
+                    amount = amount,
+                    category = Category.fromString(response.category) ?: Category.Other,
+                    name = response.merchantName,
+                    note = response.notes,
+                    merchantNameRaw = response.merchantName,
+                    transactionDateRaw = response.transactionDateRaw,
+                    totalAmountRaw = response.totalAmountRaw,
+                    lineItems = lineItems,
+                    serviceCharge = serviceCharge,
+                    discount = discount,
+                    tax = tax,
+                    imageUri = imageFilename,
+                    extractionConfidence = response.confidence,
+                )
+            }
+        }
     }
 
     private fun parseDate(dateStr: String): Long {
@@ -136,11 +169,12 @@ class ProcessReceiptUseCase @Inject constructor(
         }
     }
 
-    private fun validate(transaction: Transaction): String? {
-        if (transaction.bill?.merchantName.isNullOrBlank()) return "Merchant name is missing"
+    private fun validateReceipt(transaction: Transaction.Receipt): String? {
+        if (transaction.name.isBlank()) return "Merchant name is missing"
         if (transaction.amount.amountMinor <= 0) return "Total amount must be positive"
-        val confidence = transaction.bill?.extractionConfidence ?: 1.0f
-        if (confidence < 0.3f) return "Receipt unclear (${(confidence * 100).toInt()}% confident). Please verify."
+        if (transaction.extractionConfidence < 0.3f) {
+            return "Receipt unclear (${(transaction.extractionConfidence * 100).toInt()}% confident). Please verify."
+        }
         return null
     }
 }

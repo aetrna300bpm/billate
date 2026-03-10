@@ -7,10 +7,13 @@ import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,12 +34,15 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DatePicker
+import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -54,7 +60,10 @@ import androidx.core.content.FileProvider
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.billate.app.core.currency.MoneyFormatter
+import com.billate.app.core.model.PeriodType
 import com.billate.app.core.model.Transaction
+import com.billate.app.ui.components.DashboardCard
+import com.billate.app.ui.components.SearchBar
 import com.billate.app.viewmodel.HomeUiState
 import com.billate.app.viewmodel.HomeViewModel
 import java.io.File
@@ -62,7 +71,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(
     onNavigateToReview: (Transaction) -> Unit,
@@ -70,11 +79,16 @@ fun HomeScreen(
     onNavigateToCreate: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
-    val transactions by viewModel.transactions.collectAsStateWithLifecycle()
+    val groupedTransactions by viewModel.groupedTransactions.collectAsStateWithLifecycle()
+    val dashboardState by viewModel.dashboardState.collectAsStateWithLifecycle()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val searchQuery by viewModel.searchQuery.collectAsStateWithLifecycle()
+    val selectedCategories by viewModel.selectedCategories.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var showPickerDialog by remember { mutableStateOf(false) }
     var cameraImageUri by remember { mutableStateOf<Uri?>(null) }
+    var showStartDatePicker by remember { mutableStateOf(false) }
+    var showEndDatePicker by remember { mutableStateOf(false) }
 
     val galleryLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.PickVisualMedia(),
@@ -132,31 +146,76 @@ fun HomeScreen(
             ) {
                 CircularProgressIndicator(modifier = Modifier.size(48.dp))
                 Spacer(modifier = Modifier.height(16.dp))
-                Text("Processing receipt…", style = MaterialTheme.typography.bodyLarge)
-            }
-        } else if (transactions.isEmpty()) {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Icon(
-                    Icons.Default.Receipt, contentDescription = null,
-                    modifier = Modifier.size(64.dp),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Text("No transactions yet", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                Text("Tap + to scan a receipt", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text("Processing image…", style = MaterialTheme.typography.bodyLarge)
             }
         } else {
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
-                contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
+                contentPadding = PaddingValues(16.dp),
             ) {
-                items(transactions, key = { it.id }) { tx ->
-                    TransactionCard(transaction = tx, onClick = { onNavigateToEdit(tx.id) })
+                // ── Dashboard card ──
+                item(key = "dashboard") {
+                    DashboardCard(
+                        state = dashboardState,
+                        onPeriodChange = { type ->
+                            viewModel.onPeriodChange(type)
+                            if (type == PeriodType.CUSTOM) {
+                                showStartDatePicker = true
+                            }
+                        },
+                        onCustomStartPick = { showStartDatePicker = true },
+                        onCustomEndPick = { showEndDatePicker = true },
+                    )
+                }
+
+                // ── Search bar ──
+                item(key = "search") {
+                    SearchBar(
+                        query = searchQuery,
+                        onQueryChange = viewModel::onSearchQueryChange,
+                        selectedCategories = selectedCategories,
+                        onCategoryToggle = viewModel::onCategoryToggle,
+                    )
+                }
+
+                // ── Grouped transactions with sticky headers ──
+                if (groupedTransactions.isEmpty()) {
+                    item {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 48.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                        ) {
+                            Icon(
+                                Icons.Default.Receipt,
+                                contentDescription = null,
+                                modifier = Modifier.size(64.dp),
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                            Spacer(modifier = Modifier.height(16.dp))
+                            Text(
+                                "No transactions yet",
+                                style = MaterialTheme.typography.titleMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                            Text(
+                                "Tap + to scan a receipt",
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
+                    }
+                } else {
+                    groupedTransactions.forEach { group ->
+                        stickyHeader(key = "header_${group.date}") {
+                            DayHeader(label = group.label, total = group.dailyTotal)
+                        }
+                        items(group.transactions, key = { it.id }) { tx ->
+                            TransactionCard(transaction = tx, onClick = { onNavigateToEdit(tx.id) })
+                        }
+                    }
                 }
             }
         }
@@ -170,6 +229,43 @@ fun HomeScreen(
                 .padding(16.dp),
         ) {
             Icon(Icons.Default.Add, contentDescription = "Add transaction")
+        }
+    }
+
+    // ── Custom date pickers ──
+    if (showStartDatePicker) {
+        val datePickerState = rememberDatePickerState()
+        DatePickerDialog(
+            onDismissRequest = { showStartDatePicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    datePickerState.selectedDateMillis?.let { viewModel.onCustomStartChange(it) }
+                    showStartDatePicker = false
+                    showEndDatePicker = true
+                }) { Text("Next") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showStartDatePicker = false }) { Text("Cancel") }
+            },
+        ) {
+            DatePicker(state = datePickerState, title = { Text("Start Date", modifier = Modifier.padding(16.dp)) })
+        }
+    }
+    if (showEndDatePicker) {
+        val datePickerState = rememberDatePickerState()
+        DatePickerDialog(
+            onDismissRequest = { showEndDatePicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    datePickerState.selectedDateMillis?.let { viewModel.onCustomEndChange(it) }
+                    showEndDatePicker = false
+                }) { Text("Done") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showEndDatePicker = false }) { Text("Cancel") }
+            },
+        ) {
+            DatePicker(state = datePickerState, title = { Text("End Date", modifier = Modifier.padding(16.dp)) })
         }
     }
 
@@ -253,6 +349,34 @@ private fun createTempImageFile(context: android.content.Context): File {
 }
 
 @Composable
+private fun DayHeader(
+    label: String,
+    total: com.billate.app.core.model.Money,
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.surface)
+            .padding(vertical = 8.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.titleSmall,
+            fontWeight = FontWeight.SemiBold,
+            color = MaterialTheme.colorScheme.onSurface,
+        )
+        Text(
+            text = MoneyFormatter.format(total),
+            style = MaterialTheme.typography.titleSmall,
+            fontWeight = FontWeight.Medium,
+            color = MaterialTheme.colorScheme.primary,
+        )
+    }
+}
+
+@Composable
 private fun TransactionCard(
     transaction: Transaction,
     onClick: () -> Unit,
@@ -273,7 +397,7 @@ private fun TransactionCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = transaction.bill?.merchantName?.ifBlank { null } ?: transaction.note.ifBlank { "Transaction" },
+                    text = transaction.name.ifBlank { "Transaction" },
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
                     maxLines = 1,
@@ -298,11 +422,11 @@ private fun TransactionCard(
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
-                    if (transaction.bill != null) {
+                    if (transaction is Transaction.Receipt || transaction is Transaction.WireTransfer) {
                         Spacer(modifier = Modifier.width(6.dp))
                         Icon(
                             Icons.Default.Receipt,
-                            contentDescription = "Scanned receipt",
+                            contentDescription = "Scanned transaction",
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -314,7 +438,7 @@ private fun TransactionCard(
                     color = MaterialTheme.colorScheme.secondary,
                 )
             }
-            val itemCount = transaction.bill?.lineItems?.size ?: 0
+            val itemCount = if (transaction is Transaction.Receipt) transaction.lineItems.size else 0
             if (itemCount > 0) {
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(

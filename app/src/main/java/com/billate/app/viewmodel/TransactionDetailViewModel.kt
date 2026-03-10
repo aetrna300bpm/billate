@@ -2,7 +2,6 @@ package com.billate.app.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.billate.app.core.model.Bill
 import com.billate.app.core.model.Category
 import com.billate.app.core.model.LineItem
 import com.billate.app.core.model.Money
@@ -66,83 +65,106 @@ class TransactionDetailViewModel @Inject constructor(
         }
     }
 
-    fun updateMerchant(name: String) {
+    fun updateName(name: String) {
         updateTransaction { tx ->
-            tx.copy(bill = (tx.bill ?: Bill()).copy(merchantName = name))
+            when (tx) {
+                is Transaction.Receipt -> tx.copy(name = name)
+                is Transaction.WireTransfer -> tx.copy(name = name)
+                is Transaction.Manual -> tx.copy(name = name)
+            }
         }
     }
 
     fun updateNote(note: String) {
-        updateTransaction { it.copy(note = note) }
+        updateTransaction { tx ->
+            when (tx) {
+                is Transaction.Receipt -> tx.copy(note = note)
+                is Transaction.WireTransfer -> tx.copy(note = note)
+                is Transaction.Manual -> tx.copy(note = note)
+            }
+        }
     }
 
     fun updateTotal(amountMinor: Long) {
         updateTransaction { tx ->
-            tx.copy(amount = tx.amount.copy(amountMinor = amountMinor))
+            val newAmount = tx.amount.copy(amountMinor = amountMinor)
+            when (tx) {
+                is Transaction.Receipt -> tx.copy(amount = newAmount)
+                is Transaction.WireTransfer -> tx.copy(amount = newAmount)
+                is Transaction.Manual -> tx.copy(amount = newAmount)
+            }
         }
     }
 
     fun updateCategory(category: Category) {
-        updateTransaction { it.copy(category = category) }
+        updateTransaction { tx ->
+            when (tx) {
+                is Transaction.Receipt -> tx.copy(category = category)
+                is Transaction.WireTransfer -> tx.copy(category = category)
+                is Transaction.Manual -> tx.copy(category = category)
+            }
+        }
     }
 
     fun updateTimestamp(timestamp: Long) {
-        updateTransaction { it.copy(timestamp = timestamp) }
+        updateTransaction { tx ->
+            when (tx) {
+                is Transaction.Receipt -> tx.copy(timestamp = timestamp)
+                is Transaction.WireTransfer -> tx.copy(timestamp = timestamp)
+                is Transaction.Manual -> tx.copy(timestamp = timestamp)
+            }
+        }
     }
 
-    // --- Adjustment updates ---
+    // --- Adjustment updates (Receipt only) ---
 
     fun updateServiceCharge(amountMinor: Long?) {
         updateTransaction { tx ->
-            val bill = tx.bill ?: return@updateTransaction tx
+            if (tx !is Transaction.Receipt) return@updateTransaction tx
             val newCharge = amountMinor?.let { Money(it, tx.amount.currency) }
-            tx.copy(bill = bill.copy(serviceCharge = newCharge))
+            tx.copy(serviceCharge = newCharge)
         }
     }
 
     fun updateDiscount(amountMinor: Long?) {
         updateTransaction { tx ->
-            val bill = tx.bill ?: return@updateTransaction tx
-            // Discount is stored as negative
+            if (tx !is Transaction.Receipt) return@updateTransaction tx
             val newDiscount = amountMinor?.let { Money(it, tx.amount.currency) }
-            tx.copy(bill = bill.copy(discount = newDiscount))
+            tx.copy(discount = newDiscount)
         }
     }
 
     fun updateTax(amountMinor: Long?) {
         updateTransaction { tx ->
-            val bill = tx.bill ?: return@updateTransaction tx
+            if (tx !is Transaction.Receipt) return@updateTransaction tx
             val newTax = amountMinor?.let { Money(it, tx.amount.currency) }
-            tx.copy(bill = bill.copy(tax = newTax))
+            tx.copy(tax = newTax)
         }
     }
 
-    // --- Line item operations ---
+    // --- Line item operations (Receipt only) ---
 
     fun updateLineItem(index: Int, item: LineItem) {
         updateTransaction { tx ->
-            val bill = tx.bill ?: return@updateTransaction tx
-            val items = bill.lineItems.toMutableList()
+            if (tx !is Transaction.Receipt) return@updateTransaction tx
+            val items = tx.lineItems.toMutableList()
             if (index in items.indices) {
                 items[index] = item
             }
-            val updatedBill = bill.copy(lineItems = items)
-            val updatedTx = tx.copy(bill = updatedBill)
-            maybeRecalculateTotal(updatedTx)
+            val updated = tx.copy(lineItems = items)
+            maybeRecalculateTotal(updated)
         }
     }
 
     fun addLineItem() {
         updateTransaction { tx ->
-            val bill = tx.bill ?: return@updateTransaction tx
+            if (tx !is Transaction.Receipt) return@updateTransaction tx
             val currency = tx.amount.currency
             tx.copy(
-                bill = bill.copy(
-                    lineItems = bill.lineItems + LineItem(
-                        description = "",
-                        qty = 1,
-                        amount = Money.zero(currency),
-                    ),
+                lineItems = tx.lineItems + LineItem(
+                    description = "",
+                    qty = 1,
+                    amount = Money.zero(currency),
                 ),
             )
         }
@@ -150,14 +172,13 @@ class TransactionDetailViewModel @Inject constructor(
 
     fun removeLineItem(index: Int) {
         updateTransaction { tx ->
-            val bill = tx.bill ?: return@updateTransaction tx
-            val items = bill.lineItems.toMutableList()
+            if (tx !is Transaction.Receipt) return@updateTransaction tx
+            val items = tx.lineItems.toMutableList()
             if (index in items.indices) {
                 items.removeAt(index)
             }
-            val updatedBill = bill.copy(lineItems = items)
-            val updatedTx = tx.copy(bill = updatedBill)
-            maybeRecalculateTotal(updatedTx)
+            val updated = tx.copy(lineItems = items)
+            maybeRecalculateTotal(updated)
         }
     }
 
@@ -203,13 +224,12 @@ class TransactionDetailViewModel @Inject constructor(
      * Recalculate the transaction total from line items + adjustments,
      * but only when [lineItemEditMode] is [LineItemEditMode.RECALCULATE_TOTAL].
      */
-    private fun maybeRecalculateTotal(tx: Transaction): Transaction {
+    private fun maybeRecalculateTotal(tx: Transaction.Receipt): Transaction.Receipt {
         if (lineItemEditMode != LineItemEditMode.RECALCULATE_TOTAL) return tx
-        val bill = tx.bill ?: return tx
-        val itemsTotal = bill.lineItems.sumOf { it.amount.amountMinor * it.qty }
-        val svcCharge = bill.serviceCharge?.amountMinor ?: 0L
-        val disc = bill.discount?.amountMinor ?: 0L   // already negative
-        val taxAmt = bill.tax?.amountMinor ?: 0L
+        val itemsTotal = tx.lineItems.sumOf { it.amount.amountMinor * it.qty }
+        val svcCharge = tx.serviceCharge?.amountMinor ?: 0L
+        val disc = tx.discount?.amountMinor ?: 0L   // already negative
+        val taxAmt = tx.tax?.amountMinor ?: 0L
         val newTotal = itemsTotal + svcCharge + disc + taxAmt
         return tx.copy(amount = tx.amount.copy(amountMinor = newTotal))
     }

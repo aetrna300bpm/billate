@@ -1,24 +1,31 @@
 package com.billate.app.data.local
 
-import com.billate.app.core.model.Bill
 import com.billate.app.core.model.Category
 import com.billate.app.core.model.LineItem
 import com.billate.app.core.model.Money
 import com.billate.app.core.model.Transaction
 
 /**
- * Maps between Room entities and domain models.
+ * Maps between Room entities and the sealed [Transaction] hierarchy.
  */
 object TransactionMappers {
 
     fun TransactionWithLineItems.toDomain(): Transaction {
         val tx = transaction
         val currency = tx.currency
-        val hasBill = tx.merchantName != null
+        val amount = Money(tx.amountMinor, currency)
+        val category = Category.fromString(tx.category) ?: Category.Other
 
-        val bill = if (hasBill) {
-            Bill(
-                merchantName = tx.merchantName ?: "",
+        return when (tx.type) {
+            "receipt" -> Transaction.Receipt(
+                id = tx.id,
+                timestamp = tx.timestamp,
+                amount = amount,
+                category = category,
+                name = tx.name.ifBlank { tx.merchantName ?: "" },
+                note = tx.note.ifBlank { tx.billNotes ?: "" },
+                createdAt = tx.createdAt,
+                merchantNameRaw = tx.merchantName ?: "",
                 transactionDateRaw = tx.transactionDateRaw ?: "",
                 totalAmountRaw = tx.totalAmountRaw ?: "",
                 lineItems = lineItems.map { it.toDomain(currency) },
@@ -31,23 +38,31 @@ object TransactionMappers {
                 tax = tx.taxMinor?.let {
                     Money(it, tx.taxCurrency ?: currency)
                 },
-                notes = tx.billNotes ?: "",
                 imageUri = tx.billImageUri,
                 extractionConfidence = tx.extractionConfidence,
             )
-        } else {
-            null
+            "wire_transfer" -> Transaction.WireTransfer(
+                id = tx.id,
+                timestamp = tx.timestamp,
+                amount = amount,
+                category = category,
+                name = tx.name.ifBlank { tx.recipientName ?: "" },
+                note = tx.note,
+                createdAt = tx.createdAt,
+                recipientName = tx.recipientName ?: "",
+                imageUri = tx.billImageUri,
+                extractionConfidence = tx.extractionConfidence,
+            )
+            else -> Transaction.Manual(
+                id = tx.id,
+                timestamp = tx.timestamp,
+                amount = amount,
+                category = category,
+                name = tx.name,
+                note = tx.note,
+                createdAt = tx.createdAt,
+            )
         }
-
-        return Transaction(
-            id = tx.id,
-            timestamp = tx.timestamp,
-            amount = Money(tx.amountMinor, currency),
-            category = Category.fromString(tx.category) ?: Category.Other,
-            bill = bill,
-            note = tx.note,
-            createdAt = tx.createdAt,
-        )
     }
 
     private fun LineItemEntity.toDomain(currency: String) = LineItem(
@@ -58,31 +73,49 @@ object TransactionMappers {
         amountRaw = amountRaw,
     )
 
-    fun Transaction.toEntity() = TransactionEntity(
-        id = if (id == 0L) 0 else id,
-        timestamp = timestamp,
-        amountMinor = amount.amountMinor,
-        currency = amount.currency,
-        category = category.displayName,
-        note = note,
-        merchantName = bill?.merchantName,
-        transactionDateRaw = bill?.transactionDateRaw,
-        totalAmountRaw = bill?.totalAmountRaw,
-        billNotes = bill?.notes,
-        billImageUri = bill?.imageUri,
-        serviceChargeMinor = bill?.serviceCharge?.amountMinor,
-        serviceChargeCurrency = bill?.serviceCharge?.currency,
-        discountMinor = bill?.discount?.amountMinor,
-        discountCurrency = bill?.discount?.currency,
-        taxMinor = bill?.tax?.amountMinor,
-        taxCurrency = bill?.tax?.currency,
-        extractionConfidence = bill?.extractionConfidence ?: 1.0f,
-        createdAt = createdAt,
-    )
+    fun Transaction.toEntity(): TransactionEntity {
+        val typeStr = when (this) {
+            is Transaction.Receipt -> "receipt"
+            is Transaction.WireTransfer -> "wire_transfer"
+            is Transaction.Manual -> "manual"
+        }
+        val base = TransactionEntity(
+            id = if (id == 0L) 0 else id,
+            type = typeStr,
+            timestamp = timestamp,
+            amountMinor = amount.amountMinor,
+            currency = amount.currency,
+            category = category.displayName,
+            name = name,
+            note = note,
+            createdAt = createdAt,
+        )
+        return when (this) {
+            is Transaction.Receipt -> base.copy(
+                merchantName = merchantNameRaw,
+                transactionDateRaw = transactionDateRaw,
+                totalAmountRaw = totalAmountRaw,
+                billImageUri = imageUri,
+                serviceChargeMinor = serviceCharge?.amountMinor,
+                serviceChargeCurrency = serviceCharge?.currency,
+                discountMinor = discount?.amountMinor,
+                discountCurrency = discount?.currency,
+                taxMinor = tax?.amountMinor,
+                taxCurrency = tax?.currency,
+                extractionConfidence = extractionConfidence,
+            )
+            is Transaction.WireTransfer -> base.copy(
+                recipientName = recipientName,
+                billImageUri = imageUri,
+                extractionConfidence = extractionConfidence,
+            )
+            is Transaction.Manual -> base
+        }
+    }
 
     fun Transaction.lineItemEntities(): List<LineItemEntity> {
-        val items = bill?.lineItems ?: return emptyList()
-        return items.map { item ->
+        if (this !is Transaction.Receipt) return emptyList()
+        return lineItems.map { item ->
             LineItemEntity(
                 id = 0,
                 transactionId = 0, // Will be set by DAO

@@ -12,17 +12,28 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GeminiReceiptResponse(
-    @SerialName("merchant_name") val merchantName: String = "",
+    /** "receipt" or "wire_transfer" — auto-detected by the model. */
+    val type: String = "receipt",
+
+    // ── Shared fields (both types) ──
     @SerialName("transaction_date") val transactionDate: String = "",
     @SerialName("transaction_date_raw") val transactionDateRaw: String = "",
     val currency: String = "",
     @SerialName("final_total") val finalTotal: Long = 0,
     @SerialName("total_amount_raw") val totalAmountRaw: String = "",
     val category: String = "Other",
-    @SerialName("line_items") val lineItems: List<GeminiLineItem> = emptyList(),
-    val adjustments: GeminiAdjustments? = null,
     val notes: String = "",
     val confidence: Float = 1.0f,
+
+    // ── Receipt-only fields ──
+    @SerialName("merchant_name") val merchantName: String = "",
+    @SerialName("line_items") val lineItems: List<GeminiLineItem> = emptyList(),
+    val adjustments: GeminiAdjustments? = null,
+
+    // ── Wire transfer-only fields ──
+    @SerialName("recipient_name") val recipientName: String? = null,
+    @SerialName("recipient_bank") val recipientBank: String? = null,
+    @SerialName("transaction_reference") val transactionReference: String? = null,
 )
 
 @Serializable
